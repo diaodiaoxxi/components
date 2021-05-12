@@ -1,0 +1,37 @@
+{
+  "name": "@hui/h-frame-layout",
+  "version": "1.12.0",
+  "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
+  "keywords": [],
+  "author": "tanhong <tanhong28754@hundsun.com>",
+  "license": "ISC",
+  "main": "dist/h-frame-layout.umd.min.js",
+  "directories": {
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "dist",
+    "components",
+    "locales",
+    "src",
+    "styles",
+    "index.js"
+  ],
+  "publishConfig": {
+    "registry": "http://192.168.102.232:6060/repository/rd_center/"
+  },
+  "scripts": {
+    "build": "hui-build",
+    "build:lib": "hui-build --build-type lib --lib-entry ./components/Msgbox/",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@hui/scss-utils": "^1.0.2",
+    "@hui/shared-utils": "^1.0.2",
+    "vuedraggable": "^2.24.3"
+  },
+  "devDependencies": {
+    "@hui/build-tools": "^1.0.0"
+  }
+}

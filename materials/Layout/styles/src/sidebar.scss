@@ -1,0 +1,317 @@
+@mixin shadow-border {
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: -1px;
+    width: 30px;
+    transform: translateX(100%);
+    box-shadow: inset 10px 0 8px -8px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s;
+    pointer-events: none;
+  }
+}
+
+/* 侧边栏容器
+---------------------------*/
+@include b(layout-sidebar) {
+  position: fixed;
+  z-index: 900;
+  top: $topbar-height;
+  left: 0;
+  bottom: 0;
+  background: $sidebar-bg;
+  color: $sidebar-color;
+  width: $sidebar-base-width;
+  padding: 0 0 $sidebar-footer-height;
+  transition: background-color 0.4s ease-in-out;
+  transition: height 0.2s ease-in-out, width 0.2s ease-in-out, padding 0.2s ease-in-out;
+  @include shadow-border();
+  @include user-select();
+  @include scrollbar($scrollbar-color);
+
+  @include when(collapse) {
+    width: $sidebar-collapse-width;
+    transition: height 0.2s ease-in-out, width 0.2s ease-in-out, padding 0.2s ease-in-out;
+  }
+
+  @include when(has-fullmenu) {
+    padding: $sidebar-head-height 0 $sidebar-footer-height;
+
+    .h-layout-menu-item {
+      .h-layout-menu-item-title {
+        padding-right: 12px;
+      }
+      // .h-layout-menu-item-title {
+      //   padding-right: 12px + 14px + 4px;
+      // }
+      // .h-layout-sidebar-icon-close {
+      //   display: block;
+      // }
+    }
+
+    .h-layout-menu-item:hover {
+      .h-layout-menu-item-title {
+        padding-right: 12px + 14px + 4px;
+      }
+      .h-layout-sidebar-icon-close {
+        display: block;
+      }
+      .h-layout-sidebar-icon-drag {
+        display: block;
+      }
+    }
+
+    .h-layout-sidebar-icon-close {
+      display: none;
+      position: absolute;
+      top: 0;
+      font-size: 14px;
+      // right: 12px;
+      right: 12px + 14px + 2px;
+      &:hover {
+        color: $sidebar-fullmenu-icon-close-hover-color;
+      }
+    }
+
+    .h-layout-sidebar-icon-drag {
+      display: none;
+      position: absolute;
+      top: 0;
+      font-size: 14px;
+      right: 12px;
+      padding-left: 4px;
+      cursor: move;
+      &:hover {
+        color: $sidebar-fullmenu-icon-close-hover-color;
+      }
+    }
+
+    @include when(collapse) {
+      .h-layout-menu-item .h-layout-sidebar-icon-close {
+        display: none;
+      }
+
+      @include e(icon-close) {
+        display: none;
+      }
+
+      @include e(icon-drag) {
+        display: none;
+      }
+    }
+  }
+
+  @include e(body) {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    &:hover {
+      overflow-y: auto;
+    }
+    // 添加才有动画
+    .h-layout-menu:not(.h-layout-menu-collapse) {
+      width: 100%;
+    }
+
+    .h-layout-menu-collapse {
+      width: $sidebar-collapse-width;
+    }
+
+    // TODO prefix complete
+    .h-layout-submenu .h-layout-menu-icon-arrow-down {
+      font-size: 14px;
+    }
+  }
+
+  @include e(main-menu) {
+    padding: 12px 0;
+    border: none;
+  }
+}
+
+/* 侧边栏菜单-底部展开按钮
+  ---------------------------*/
+@include b(layout-sidebar-expand) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $sidebar-footer-height;
+  background: $sidebar-bg;
+  border-top: $sidebar-expand-split-line;
+  transition: background 0.4s ease-in-out;
+  transition: height 0.2s ease-in-out, width 0.2s ease-in-out, padding 0.2s ease-in-out;
+  cursor: pointer;
+  z-index: 900;
+  i[name='icon-collapse'] {
+    display: inline-block;
+    font-size: 16px;
+    color: $sidebar-expand-icon-color;
+    cursor: pointer;
+  }
+}
+
+/* 抽屉式菜单-折叠时-二级抽屉盒
+  ---------------------------*/
+@include b(layout-sidebar-drawer) {
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  top: 0;
+  left: $sidebar-collapse-width;
+  transition: left ease-in-out 0.3s;
+  background: $sidebar-drawer-bg;
+  @include shadow-border();
+
+  @include when(auto) {
+    width: auto;
+    min-width: 200px;
+    left: $sidebar-base-width;
+    @include when(collapse) {
+      left: $sidebar-collapse-width;
+    }
+  }
+
+  @include e(wrap) {
+    position: relative;
+    padding: 44px 0 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include e(title) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 16px;
+    width: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    color: $sidebar-color;
+    @include ellipsis();
+  }
+
+  @include e(body) {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    // TODO prefix
+    .h-layout-menu {
+      width: 100%;
+      border: none;
+    }
+    .h-layout-menu-item {
+      height: 32px;
+      font-size: 12px;
+    }
+    .h-layout-submenu .h-layout-submenu-title {
+      padding-right: 25px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 12px;
+    }
+
+    // 小圆点边距覆盖为 6px
+    .h-layout-submenu .h-layout-submenu-title > .h-layout-menu-item-icon,
+    .h-layout-submenu
+      .h-layout-submenu-title
+      > .h-layout-menu-item-wrap
+      > .h-layout-menu-item-icon {
+      margin-right: 6px;
+    }
+  }
+}
+
+/** 全部菜单----------------------------------*/
+@include b(layout-sidebar-fullmenu) {
+  $p: '.#{$B}';
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $sidebar-head-height;
+  line-height: $sidebar-head-height;
+  padding: $sidebar-fullmenu-padding;
+  border-bottom: $sidebar-fullmenu-border;
+  color: $sidebar-fullmenu-color;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  @include when(active) {
+    background: $sidebar-fullmenu-active-bg;
+    #{$p}-icon {
+      color: $sidebar-fullmenu-active-color;
+    }
+  }
+
+  @include when(collapse) {
+    justify-content: center;
+    #{$p}-title {
+      display: none;
+    }
+  }
+
+  #{$p}-title {
+    @include ellipsis();
+  }
+}
+
+@include b(layout-sidebar-fullmenu-drawer) {
+  .h-layout-menu-cook-wrap {
+    min-width: 648px;
+  }
+  .h-layout-menu-cook-body.columns-1 {
+    width: 100%;
+  }
+  @include e(close) {
+    position: absolute;
+    display: block;
+    top: 12px;
+    right: 12px;
+    color: $sidebar-fullmenu-icon-close-color;
+    line-height: normal;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
+
+// fix 菜谱菜单浮窗层级
+.h-layout-menu-cook-popper-wrap {
+  z-index: 600;
+}
+
+.h-layout-menu-cook-popper:not(.is-full) {
+  margin-left: 1px;
+}
+
+// fix circle icon color
+// http://dev.hundsun.com/frame/pms/storyManage?project_id=633&story_id=60335&isQualityStory=false
+.h-layout-menu-item > .h-layout-menu-item-icon.h-layout-icon-submenu-circle,
+.h-layout-menu-item
+  > .h-layout-menu-item-wrap
+  > .h-layout-menu-item-icon.h-layout-icon-submenu-circle {
+  color: rgba(#333, 0.2);
+}
+
+.h-layout-submenu .h-layout-submenu-title > .h-layout-menu-item-icon.h-layout-icon-submenu-circle,
+.h-layout-submenu
+  .h-layout-submenu-title
+  > .h-layout-menu-item-wrap
+  > .h-layout-menu-item-icon.h-layout-icon-submenu-circle {
+  color: rgba(#333, 0.2);
+}
+
+.h-layout-submenu.is-active
+  > .h-layout-submenu-title
+  .h-layout-menu-item-icon.h-layout-icon-submenu-circle,
+.h-layout-submenu.is-active > .h-layout-submenu-title .h-layout-menu-item-title {
+  color: #4686f2;
+}

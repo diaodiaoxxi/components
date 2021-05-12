@@ -1,0 +1,27 @@
+{
+  "name": "@hui/tree",
+  "version": "1.4.0",
+  "description": "> TODO: description",
+  "author": "hui",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/tree.umd.min.js",
+  "directories": {},
+  "files": ["dist"],
+  "publishConfig": {
+    "registry": "http://192.168.102.232:6060/repository/rd_center/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.hundsun.com/HUI/hui-component2.git"
+  },
+  "scripts": {
+    "build": "hui-build",
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "prod": "yarn build && npm publish"
+  },
+  "dependencies": {
+    "@hui/directives": "^1.0.2",
+    "@hui/shared-utils": "^1.0.2"
+  }
+}

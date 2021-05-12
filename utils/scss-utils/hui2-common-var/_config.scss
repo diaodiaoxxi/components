@@ -1,0 +1,7 @@
+/* BEM config */
+$namespace: 'u' !default;
+// $element-separator: '-' !default;
+$element-separator: '__' !default;
+// $modifier-separator: '-' !default;
+$modifier-separator: '--' !default;
+$state-prefix: 'is-' !default;

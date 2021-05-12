@@ -1,0 +1,21 @@
+{
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "independent": true,
+  "version": "independent",
+  "ignoreChanges": [
+    "**/__fixtures__/**",
+    "**/__tests__/**",
+    "**/*.md"
+  ],
+  "packages": [
+    "materials/*",
+    "utils/*"
+  ],
+  "bootstrap": {
+    "npmClientArgs": ["--registry=http://192.168.102.232:6060/repository/npm-public/", "--no-package-lock"]
+  },
+  "publish": {
+    "registry": "http://192.168.102.232:6060/repository/rd_center/"
+  }
+}

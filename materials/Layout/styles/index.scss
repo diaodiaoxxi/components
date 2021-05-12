@@ -1,0 +1,289 @@
+/* mixion function
+---------------------------*/
+@import '~@hui/scss-utils';
+
+$namespace: 'h';
+$element-separator: '-';
+$modifier-separator: '-';
+$state-prefix: 'is-';
+
+/* var 变量
+---------------------------*/
+@import './src/var.scss';
+/* reset
+---------------------------*/
+@import './src/reset.scss';
+@import './src/scroll.scss';
+
+/* 容器 子组件
+---------------------------*/
+@import './src/main.scss';
+@import './src/topbar.scss';
+@import './src/sidebar.scss';
+@import './src/navbar.scss';
+@import './src/noticebar.scss';
+
+@import './src/menu-search.scss';
+
+/* tooltip 
+----------------------------------------*/
+@include layout-tooltip();
+
+/* 顶部栏操作 弹窗 子组件
+----------------------------------------*/
+@import './src/_msgbox.scss';
+.h-layout-lockscreen {
+  @include msg-box();
+}
+
+.h-layout-resetpwd {
+  @include msg-box();
+}
+
+.h-layout-locale {
+  @include msg-box();
+}
+
+.h-layout-sys-sort {
+  @include msg-box();
+}
+// 外框临时覆盖 hui1.0 msg-box 
+.h-layout-msg-box {
+  @include msg-box();
+}
+
+/* 外部 navTabs 子组件
+----------------------------------------*/
+@import '~@packages/NavTabs/styles/index.scss';
+
+/* 全部菜单下 外部 navTabs 子组件
+-----------------------------------------------------*/
+@import '~@packages/NavTabs/styles/index.scss';
+@include b(layout-sidebar-fullmenu-drawer) {
+  $navbar-tab-padding: 16px;
+  $navbar-height: 28px;
+  $navbar-bg-color: #f7f7f7;
+  $navbar-tab-active-bg: #4686f2;
+  $navbar-tab-active-color: #fff;
+  $navbar-border-color: transparent;
+  $navbar-ctrl-border-color: transparent;
+  @import '~@packages/NavTabs/styles/index.scss';
+}
+
+/* dark 皮肤
+---------------------------*/
+.h-layout[theme='dark'] {
+  @import './src/var-dark.scss';
+
+  @import './src/main.scss';
+  @import './src/topbar.scss';
+  @import './src/sidebar.scss';
+  @import './src/navbar.scss';
+  @import './src/noticebar.scss';
+
+  .h-topbar-sys-item.h-topbar-sys-all.is-active {
+    background-color: #2c3847;
+  }
+
+  /* 外部 navTabs 子组件
+  -----------------------------------------------------*/
+  $navbar-font-color: rgba(#fff, 0.7);
+  $navbar-bg-color: #202935;
+  $navbar-border-color: #19212b;
+
+  $navbar-ctrl-bg: #2e3a4c;
+  $navbar-ctrl-color: #fff;
+  $navbar-ctrl-disabled-color: rgba(#fff, 0.5);
+  $navbar-ctrl-disabled-bg: rgba(#2e3a4c, 0.7);
+  $navbar-ctrl-border-color: #19212b;
+
+  $navbar-tab-active-bg: #19212b;
+  $navbar-tab-active-color: #4686f2;
+
+  $navbar-context-menu-bg: #2c3847;
+  $navbar-context-menu-item-hover-bg: #32496c;
+  $navbar-context-menu-item-hover-color: rgba(#fff, 0.7);
+
+  @import '~@packages/NavTabs/styles/index.scss';
+
+  @include b(layout-sidebar-fullmenu-drawer) {
+    $navbar-bg-color: #263140;
+    $navbar-border-color: #263140;
+
+    $navbar-tab-active-bg: #4686f2;
+    $navbar-tab-active-color: #fff;
+
+    $navbar-height: 28px;
+    $navbar-ctrl-border-color: transparent;
+    @import '~@packages/NavTabs/styles/index.scss';
+  }
+}
+
+/* 外部 menu子组件
+-----------------------------------------------------*/
+$namespace: 'h-layout';
+$element-separator: '-';
+$modifier-separator: '-';
+$state-prefix: 'is-';
+
+$submenu-active-color: #fcfcfc;
+@import '~@packages/menu/styles/menu.scss';
+@import '~@packages/Tag/styles/index.scss';
+
+/* 外部 select 子组件
+---------------------------*/
+$select-text-color: #fff;
+$select-option-font-color: #333;
+$select-dropdown-font-color: #333;
+$select-head-bg-default: rgba(#fff, 0.2);
+$select-head-bg-hover: rgba(#fff, 0.4);
+$select-head-bg-focused: rgba(#fff, 1);
+$select-head-bg-disabled: rgba(#fff, 0.2);
+$select-head-border: none;
+$select-head-border-radius: 2px;
+$select-box-shadow-width: 0;
+$select-dropdown-padding: 6px;
+$select-dropdown-border-radius: 2px;
+$select-option-height: 32px;
+$select-option-padding: 0 16px;
+@import '~@packages/Select/styles/index.scss';
+
+.h-layout-select.h-layout-select-visible .h-layout-select-selection {
+  border: none;
+}
+
+/* 外部 radio 样式覆盖 子组件
+---------------------------*/
+
+.h-topbar {
+  .u-radio-group {
+    padding: 0 0 0 16px;
+  }
+
+  .u-radio-group-button.u-radio-group-small .u-radio-wrapper {
+    height: 20px;
+    line-height: 18px;
+    padding: 0 6px;
+    font-size: 12px;
+  }
+}
+
+body[data-hui-layout-theme='dark'],
+.h-layout[theme='dark'] {
+  $menu-item-font-color: #fff;
+  $menu-item-icon-color: rgba(#fff, 0.6);
+  $menu-item-hover: #313e4e;
+  $menu-item-active-bg: #4686f2;
+  $menu-item-active-color: #fff;
+
+  $submenu-active-color: rgba(#303c4c, 0.6);
+
+  $menu-cook-popper-bg: #2c3847;
+  $menu-cook-popper-box-shadow: 0 1px 6px 0 rgba(7, 12, 21, 0.2);
+
+  $menu-cook-item-hover-bg: #32496c;
+  $menu-cook-label-color: rgba(#fff, 0.7);
+  $menu-cook-title-color: #fff;
+  $menu-cook-star-hover-color: #263140;
+
+  $menu-cook-search-input-border: 1px solid #485565;
+  $menu-cook-search-icon-color: rgba(#fff, 0.6);
+  $menu-cook-search-input-color: #fff;
+
+  $menu-cook-search-placeholder-color: rgba(#fff, 0.5);
+  $menu-cook-search-empty-color: rgba(#fff, 0.7);
+  $menu-cook-search-empty-query-color: #fff;
+  $menu-cook-search-empty-query-bg: #394250;
+
+  @import '~@packages/menu/styles/menu.scss';
+
+  $namespace: 'u';
+  $anchor-link-color: rgba(#fff, 0.7);
+  $anchor-border-color: #485565;
+  @import '~@packages/Anchor/styles/index.scss';
+
+  .h-layout-menu-collapse.h-layout-menu {
+    .h-layout-menu-item-icon {
+      color: rgba(#fff, 0.5);
+    }
+  }
+
+  .h-layout-menu {
+    border-right: none;
+  }
+
+  .h-topbar {
+    .u-radio-group {
+      padding: 0 0 0 16px;
+
+      .u-radio-inner {
+        background: transparent;
+      }
+    }
+
+    .u-radio-group-button.u-radio-group-small .u-radio-wrapper {
+      height: 20px;
+      line-height: 18px;
+      padding: 0 6px;
+      font-size: 12px;
+    }
+
+    .u-radio-group-button .u-radio-wrapper {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #485565;
+    }
+
+    .u-radio-group-button .u-radio-wrapper-checked {
+      background: transparent;
+      color: #4686f2;
+      border: 1px solid #4686f2;
+    }
+  }
+
+  $layout-tool-tip-bg: #2e3a4c;
+
+  .u-tooltip-popper[x-placement^='left'] .u-tooltip-arrow {
+    border-left-color: $layout-tool-tip-bg;
+  }
+
+  .u-tooltip-popper[x-placement^='right'] .u-tooltip-arrow {
+    border-right-color: $layout-tool-tip-bg;
+  }
+
+  .u-tooltip-popper[x-placement^='bottom'] .u-tooltip-arrow {
+    border-bottom-color: $layout-tool-tip-bg;
+  }
+
+  .u-tooltip-inner {
+    background: $layout-tool-tip-bg;
+  }
+  // v-tooltip 样式整理
+  .u-tooltip-popper.v-tooltip {
+    .u-tooltip-inner {
+      background: $layout-tool-tip-bg;
+    }
+  }
+
+  .u-tooltip-popper.v-tooltip[x-placement^='left'] .u-tooltip-arrow {
+    border-left-color: $layout-tool-tip-bg;
+  }
+
+  .u-tooltip-popper.v-tooltip[x-placement^='top'] .u-tooltip-arrow {
+    border-top-color: $layout-tool-tip-bg;
+  }
+
+  .u-tooltip-popper.v-tooltip[x-placement^='bottom'] .u-tooltip-arrow {
+    border-bottom-color: $layout-tool-tip-bg;
+  }
+
+  .sortable-parent li:hover {
+    background: transparent;
+  }
+  .sortable-chosen {
+    background: #313e4e !important;
+  }
+  .sortable-ghost {
+    background: rgba(#313e4e,0.8) !important;
+  }
+}

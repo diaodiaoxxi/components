@@ -1,0 +1,30 @@
+{
+  "name": "@hui/scss-utils",
+  "version": "1.0.3",
+  "description": "> TODO: description",
+  "author": "tanhong <tanhong28754@hundsun.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "_index.scss",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "registry": "http://192.168.102.232:6060/repository/rd_center/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.hundsun.com/HUI/hui-component2.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@hui/bem-scss": "^1.0.2-alpha.0",
+    "@hui/shared-utils": "^1.0.2-alpha.0",
+    "normalize-scss": "^7.0.1"
+  }
+}

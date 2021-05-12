@@ -1,0 +1,16 @@
+@import '~@hui/bem-scss';
+@import 'hui2-icon/index'; // hui2 图标
+@import 'animation/index'; // hui2 常用动画
+
+@import 'packages/_basic-fonts.scss';
+@import 'packages/_common.scss';
+@import 'packages/_flex.scss';
+@import 'packages/_media-query.scss';
+@import 'packages/_position.scss';
+@import 'packages/_px-to-vw.scss';
+@import 'packages/_scrollbar.scss';
+@import 'packages/_shapes.scss';
+@import 'packages/_share-rule.scss';
+
+/**--通用色值-----------------**/
+@import 'hui2-common-var/var';

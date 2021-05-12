@@ -1,0 +1,143 @@
+/* Color
+-------------------------- */
+// 白色
+$--color-white: #ffffff !default;
+
+// 黑色
+$--color-black: #000000 !default;
+
+// 主色调 color1
+$--color-primary: #4686f2 !default;
+// 主色调 Hover
+$--color-primary-hover: saturate(
+  mix($--color-white, $--color-primary, 12%),
+  30%
+) !default; /* 518ef3/5196ff */
+// 主色调 Pressed
+$--color-primary-pressed: saturate(
+  mix($--color-black, $--color-primary, 18%),
+  6%
+) !default; /* 315da8/3165cc */
+
+// 黑色、中性色
+$--color-black-light-1: #333333 !default; // color15
+$--color-black-light-2: #666666 !default; // color16
+$--color-black-light-3: #999999 !default; // color17
+$--color-black-light-4: #bbbbbb !default; // color18
+$--color-black-light-5: #d9d9d9 !default; // color19
+$--color-black-light-6: #e6e6e6 !default; // color20
+$--color-black-light-7: #ededed !default; // color21
+$--color-black-light-8: #f7f7f7 !default; // color22
+
+// 成功 color6
+$--color-success: #1cb77b !default;
+$--color-success-lighter: #e9faf3 !default; // 成功信息背景 color9
+
+// 警示 color7
+$--color-warning: #f2b044 !default;
+$--color-warning-lighter: #fff8ed !default; // 警示信息背景 color10
+
+// 危险 color8
+$--color-danger: #f14c5d !default;
+$--color-danger-light: #fddcdf !default; // 必填报错外边框 color12
+$--color-danger-lighter: #fdedef !default; // 危险信息背景 color11
+$--color-danger-hover: #f36f7d !default; // 危险 Hovercolour-13
+$--color-danger-pressed: #d84453 !default; // 危险 Pressedcolour-14
+
+// 信息
+$--color-info: #4686f2 !default;
+$--color-info-lighter: #4686f2 !default; // 信息背景 下拉面板中鼠标 Hover color4
+
+// 字体
+$--color-text-primary: #333333 !default;
+/// color|1|Font Color|2
+$--color-text-regular: #606266 !default;
+/// color|1|Font Color|2
+$--color-text-secondary: #909399 !default;
+/// color|1|Font Color|2
+$--color-text-placeholder: #c0c4cc !default;
+/// color|1|Border Color|3
+$--border-color-base: #dcdfe6 !default;
+/// color|1|Border Color|3
+$--border-color-light: #e4e7ed !default;
+/// color|1|Border Color|3
+$--border-color-lighter: #ebeef5 !default;
+/// color|1|Border Color|3
+$--border-color-extra-light: #f2f6fc !default;
+
+// Background
+/// color|1|Background Color|4
+$--background-color-base: #f5f7fa !default;
+
+/* Link
+-------------------------- */
+$--link-color: $--color-primary !default;
+$--link-hover-color: $--color-primary !default;
+
+/* Border
+-------------------------- */
+$--border-width-base: 1px !default;
+$--border-style-base: solid !default;
+$--border-color-hover: $--color-text-placeholder !default;
+$--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
+/// borderRadius|1|Radius|0
+$--border-radius-base: 4px !default;
+/// borderRadius|1|Radius|0
+$--border-radius-small: 2px !default;
+/// borderRadius|1|Radius|0
+$--border-radius-circle: 100% !default;
+/// borderRadius|1|Radius|0
+$--border-radius-zero: 0 !default;
+
+// Box-shadow
+/// boxShadow|1|Shadow|1
+$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04) !default;
+// boxShadow|1|Shadow|1
+$--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.12) !default;
+/// boxShadow|1|Shadow|1
+$--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+
+/* Fill
+-------------------------- */
+$--fill-base: $--color-white !default;
+
+/* Typography
+-------------------------- */
+$--font-path: 'fonts' !default;
+$--font-display: 'auto' !default;
+/// fontSize|1|Font Size|0
+$--font-size-extra-large: 20px !default;
+/// fontSize|1|Font Size|0
+$--font-size-large: 18px !default;
+/// fontSize|1|Font Size|0
+$--font-size-medium: 16px !default;
+/// fontSize|1|Font Size|0
+$--font-size-base: 14px !default;
+/// fontSize|1|Font Size|0
+$--font-size-small: 13px !default;
+/// fontSize|1|Font Size|0
+$--font-size-extra-small: 12px !default;
+/// fontWeight|1|Font Weight|1
+$--font-weight-primary: 500 !default;
+/// fontWeight|1|Font Weight|1
+$--font-weight-secondary: 100 !default;
+/// fontLineHeight|1|Line Height|2
+$--font-line-height-primary: 24px !default;
+/// fontLineHeight|1|Line Height|2
+$--font-line-height-secondary: 16px !default;
+$--font-color-disabled-base: #bbb !default;
+/* Size
+-------------------------- */
+$--size-base: 14px !default;
+
+/* z-index
+-------------------------- */
+$--index-normal: 1 !default;
+$--index-top: 1000 !default;
+$--index-popper: 2000 !default;
+
+/* Disable base
+-------------------------- */
+$--disabled-fill-base: $--background-color-base !default;
+$--disabled-color-base: $--color-text-placeholder !default;
+$--disabled-border-base: $--border-color-light !default;

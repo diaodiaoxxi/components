@@ -1,0 +1,24 @@
+{
+  "name": "@hui/shared-utils",
+  "version": "1.0.2",
+  "description": "> TODO: description",
+  "author": "tanhong <tanhong28754@hundsun.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/shared-utils.umd.js",
+  "publishConfig": {
+    "registry": "http://192.168.102.232:6060/repository/rd_center/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.hundsun.com/HUI/hui-component2.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "hui-build"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.20"
+  }
+}

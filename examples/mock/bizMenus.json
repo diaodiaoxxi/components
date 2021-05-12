@@ -1,0 +1,243 @@
+{
+  "uuid": "BIZFRAME",
+  "title": "用户权限系统",
+  "url": "",
+  "isFavour": false,
+  "children": [
+    {
+      "uuid": "bizMenu",
+      "title": "系统菜单",
+      "icon": "layout-iconfont h-layout-icon-smile",
+      "url": "",
+      "favourItemList": [],
+      "isFavour": false,
+      "children": [
+        {
+          "uuid": "bizUserManager",
+          "title": "用户管理",
+          "icon": "t-b-userallocation",
+          "url": "",
+          "children": [
+            {
+              "uuid": "bizSetUser",
+              "title": "用户设置",
+              "url": "/bizMenu/bizUserManager/bizSetUser",
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetRole",
+              "title": "角色设置",
+              "icon": "bizframe/images/bizSetRole.png",
+              "url": "/bizMenu/bizUserManager/bizSetRole",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizPosSet",
+              "title": "岗位设置",
+              "icon": "bizframe/images/bizPosSet.png",
+              "url": "/bizMenu/bizUserManager/bizPosSet",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizOrgSet",
+              "title": "组织机构设置",
+              "icon": "bizframe/images/bizOrgSet.png",
+              "url": "/bizMenu/bizUserManager/bizOrgSet",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetCustomGroup",
+              "title": "群组设置",
+              "icon": "bizframe/images/bizSetCustomGroupe.png",
+              "url": "/bizMenu/bizUserManager/bizSetCustomGroup",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetUserSiteInfo",
+              "title": "用户登录站管理",
+              "icon": "",
+              "url": "/bizMenu/bizUserManager/bizSetUserSiteInfo",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetMyCustomGroup",
+              "title": "我的常用组",
+              "icon": "bizframe/images/bizSetMyCustomGroup.png",
+              "url": "/bizMenu/bizUserManager/bizSetMyCustomGroup",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetBranch",
+              "title": "分支机构设置",
+              "icon": "bizframe/images/bizSetBranch.png",
+              "url": "/bizMenu/bizUserManager/bizSetBranch",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetUserOnline",
+              "title": "在线用户设置",
+              "icon": "",
+              "url": "/bizMenu/bizUserManager/bizSetUserOnline",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetDutyHandover",
+              "title": "岗位交接",
+              "icon": "bizframe/images/bizSetDutyHandover.png",
+              "url": "/bizMenu/bizUserManager/bizSetDutyHandover",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetUserDuty",
+              "title": "临时替岗",
+              "icon": "bizframe/images/bizSetUserDuty.png",
+              "url": "/bizMenu/bizUserManager/bizSetUserDuty",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetMyAuthView",
+              "title": "我的权限视图",
+              "icon": "",
+              "url": "/bizMenu/bizUserManager/bizSetMyAuthView",
+              "children": [],
+              "isFavour": false
+            }
+          ],
+          "isFavour": false
+        },
+        {
+          "uuid": "bizSysManager",
+          "title": "系统管理",
+          "icon": "t-b-system",
+          "url": "",
+          "children": [
+            {
+              "uuid": "bizSetParam",
+              "title": "系统参数设置",
+              "icon": "bizframe/images/bizSetParam.png",
+              "url": "/bizMenu/bizSysManager/bizSetParam",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetDict",
+              "title": "数据字典设置",
+              "icon": "bizframe/images/bizSetDict.png",
+              "url": "/bizMenu/bizSysManager/bizSetDict",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetDictTree",
+              "title": "树形字典设置",
+              "icon": "bizframe/images/bizSetDictTree.png",
+              "url": "/bizMenu/bizSysManager/bizSetDictTree",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetKind",
+              "title": "系统类别设置",
+              "icon": "bizframe/images/bizSetKind.png",
+              "url": "/bizMenu/bizSysManager/bizSetKind",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetTrans",
+              "title": "功能权限设置",
+              "icon": "bizframe/images/bizSetTrans.png",
+              "url": "/bizMenu/bizSysManager/bizSetTrans",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetCache",
+              "title": "系统缓存设置",
+              "icon": "bizframe/images/bizSetCache.png",
+              "url": "/bizMenu/bizSysManager/bizSetCache",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetMenu",
+              "title": "系统菜单设置",
+              "icon": "bizframe/images/bizSetMenu.png",
+              "url": "/bizMenu/bizSysManager/bizSetMenu",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetLog",
+              "title": "业务日志设置",
+              "icon": "bizframe/images/bizSetLog.png",
+              "url": "/bizMenu/bizSysManager/bizSetLog",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetApprovalManager",
+              "title": "复核管理",
+              "icon": "bizframe/images/bizSetApprovalManager.png",
+              "url": "/bizMenu/bizSysManager/bizSetApprovalManager",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizSetNotice",
+              "title": "公告管理",
+              "icon": "bizframe/images/bizSetNotice.png",
+              "url": "/bizMenu/bizSysManager/bizSetNotice",
+              "children": [],
+              "isFavour": false
+            }
+          ],
+          "isFavour": false
+        },
+        {
+          "uuid": "bizMsgManager",
+          "title": "消息管理",
+          "icon": "t-b-message",
+          "url": "",
+          "children": [
+            {
+              "uuid": "bizEmailInbox",
+              "title": "消息收件箱",
+              "icon": "bizframe/images/bizEmailInbox.png",
+              "url": "/bizMenu/bizMsgManager/bizEmailInbox",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizEmailOutbox",
+              "title": "消息发件箱",
+              "icon": "bizframe/images/bizEmailOutbox.png",
+              "url": "/bizMenu/bizMsgManager/bizEmailOutbox",
+              "children": [],
+              "isFavour": false
+            },
+            {
+              "uuid": "bizDraftBox",
+              "title": "消息草稿箱",
+              "icon": "bizframe/images/bizDraftBox.png",
+              "url": "/bizMenu/bizMsgManager/bizDraftBox",
+              "children": [],
+              "isFavour": false
+            }
+          ],
+          "isFavour": false
+        }
+      ]
+    }
+  ]
+}

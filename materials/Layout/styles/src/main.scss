@@ -1,0 +1,82 @@
+/* 布局容器
+---------------------------*/
+@include b(layout) {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding-top: $topbar-height;
+}
+
+/* 布局容器-除去顶部栏-页面容器
+  ---------------------------*/
+@include b(layout-main) {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 0 0 0 $sidebar-base-width;
+  background: $layout-body-color;
+  transition: padding 0.2s ease-in-out;;
+
+
+  @include e(container) {
+    position: relative;
+    padding-top: $navbar-height + $content-space;
+    width: 100%;
+    height: 100%;
+    @include when(show-noticebar) {
+      padding-bottom: 30px;
+    }
+  }
+
+  @include e(container-page) {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include when(collapse) {
+    padding-left: $sidebar-collapse-width;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+/* layout 页面容器
+---------------------------*/
+@include b(layout-page) {
+  width: 100%;
+  height: 100%;
+}
+
+/* vue transition 动画
+---------------------------*/
+/* 可以设置不同的进入和离开动画 */
+/* 设置持续时间和动画函数 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+/* .fade-leave-active
+------- below version 2.1.8 */
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* .component-fade-leave-active
+------- below version 2.1.8 */
+.component-fade-enter-active,
+.component-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.component-fade-enter,
+.component-fade-leave-to {
+  opacity: 0;
+}
+
+//菜单动画
+.collapse-transition {
+  transition: 0.2s height ease-in-out, 0.2s padding-top ease-in-out, 0.2s padding-bottom ease-in-out;
+}

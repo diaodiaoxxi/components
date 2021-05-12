@@ -1,0 +1,27 @@
+{
+  "name": "@hui/base-empty-tip",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "keywords": ["hui","BaseEmptyTip","@hui/BaseEmptyTip"],
+  "author": "hundsun",
+  "license": "ISC",
+  "main": "dist/BaseEmptyTip.js",
+  "directories": {
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "http://192.168.102.232:6060/repository/rd_center/"
+  },
+  "scripts": {
+    "build": "hui-build",
+    "build:lib": "node build/lib.js",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@hui/scss-utils": "^1.0.3",
+    "@hui/shared-utils": "^1.0.2"
+  }
+}

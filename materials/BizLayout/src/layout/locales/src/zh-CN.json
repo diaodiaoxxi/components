@@ -1,0 +1,73 @@
+{
+  "hui": {
+    "ajax": {
+      "error": "网络通信失败,服务器异常"
+    },
+    "biz": {
+      "addFavourFail": "菜单收藏失败",
+      "addFavourSuccess": "菜单收藏成功",
+      "delFavourFail": "取消菜单收藏失败",
+      "delFavourSuccess": "取消菜单收藏成功",
+      "editUser": {
+        "certiNum": "证件号码",
+        "certiType": "证件类型",
+        "comments": "备注",
+        "email": "邮箱",
+        "fax": "传真",
+        "filterMsgType": "过滤消息类型",
+        "mobile": "移动电话",
+        "modifyFailed": "修改失败",
+        "modifySuccess": "修改成功",
+        "modifyUserInfo": "修改用户信息",
+        "phone": "固定电话",
+        "qualiCerti": "资格证书",
+        "relOrg": "所属组织",
+        "title": "个人信息",
+        "userName": "用户名称",
+        "validFaxNum": "请输入正确的传真格式",
+        "validIdCard": "请输入正确的证件号码格式",
+        "workStatus": "工作状态"
+      },
+      "space": {
+        "currentSpace": "当前空间",
+        "default": "默认空间",
+        "success": "切换空间成功",
+        "title": "切换空间",
+        "validTip": "请先选择你要切换的空间"
+      },
+      "tenant": {
+        "choose": "请选择租户",
+        "currentTenant": "当前租户",
+        "failMsg": "切换租户失败！",
+        "successMsg": "切换租户成功！",
+        "title": "切换租户",
+        "validTip": "必须选择一个租户"
+      }
+    },
+    "common": {
+      "cancel": "取消",
+      "commit": "提交",
+      "register": "注册",
+      "reset": "重置",
+      "sure": "确定"
+    },
+    "frameLayout": {
+      "appName": "框架导航模板页",
+      "allTab": "全部页面",
+      "customPropMenu": "属性自定义",
+      "customSlotMenu": "插槽自定义",
+      "day": "天",
+      "otherTab": "其他页面",
+      "pwdExpired": "密码过期还有",
+      "sureClose": "确认关闭",
+      "tip": "提示"
+    },
+    "frameLayoutDemo": {
+      "bizMenuTab": "子应用页签示例",
+      "fooTab": "子应用自定义添加页签",
+      "home": "首页",
+      "systemName": "框架相关示例",
+      "tab": "自定义添加页签"
+    }
+  }
+}

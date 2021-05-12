@@ -1,0 +1,129 @@
+/* tree-var 
+---------------------------*/
+@import './var.scss';
+
+
+/* mixion function
+---------------------------*/
+@import '~@hui/scss-utils';
+
+
+/* tree-node bem
+---------------------------*/
+@include b(tree-node) {
+  $tree-node: &;
+  height: $tree-height;
+  line-height: $tree-line-height;
+
+
+  @include flex-horizontal();
+  // display: inline-flex;
+  position: relative;
+  min-width: 100%;
+    
+  @include e(switcher) {
+    $switcher: &;
+    // @debug $switcher;
+    @include icon-size();
+    color: $tree-icon-font-color;
+    flex-shrink: 0;
+  }
+  @include e(switcher-close) {
+    $switcher-close: &;
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+  }
+  @include e(switcher-open) {
+    $switcher-open: &;
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+  }
+  @include e(switcher-loading) {
+    animation: loadingCircle 1s infinite linear;
+  }
+  @include e(checkbox) {
+    margin: 0 $tree-node-margin;
+  }
+  @include e(selector) {
+    $text: &;
+    padding: 0 4px;
+    cursor: pointer;
+    // display: inline-block;
+    white-space: nowrap;
+    @include flex-horizontal();
+    /* 针对hover背景色进入进出效果动画一致 */
+    transition: all 0.3s;
+    &:not(.u-tree-node-disabled-selector):hover{
+      background: $tree-font-hover-bg;
+      // transition: all 0.3s;
+    }
+    @include m(isBoxRight) {
+      flex: 1 0 auto;
+      @include flex-horizontal();
+    }
+  }
+  @include e(selector-text){
+    flex: 1 0 auto;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  @include e(selector-check) {
+    color: $tree-node-selector-check;
+    margin-right: 4px;
+  }
+  @include e(more) {
+    @include icon-size();
+    height: $tree-height;
+    line-height: $tree-line-height;
+    margin-left: $tree-node-margin;
+    color: #666666;
+    &:hover{
+      color: $tree-icon-font-color-hover;
+    }
+  }
+  @include e(menu) {
+    cursor: pointer;
+    padding: 5px;
+    @include box-shadow();
+    z-index: 999;
+    margin: 0;
+  }
+  @include m(selected) {
+    @include e(selector) {
+      background: $tree-font-hover-bg;
+      transition: all 0.3s;
+    }
+  }
+  @include m(focus) {
+    background: $tree-font-hover-bg;
+  }
+  @include e(blockNode) {
+    @include flex-horizontal();
+    flex: 1 0 auto;
+  }
+  @include e(text-max-width){
+    @include text-overflow();
+  }
+}
+
+/* 过滤节点 */
+@include b(tree-node-filter){
+  $filter-node: &;
+  @include e(text) {
+    color: $tree-node-filter-color;
+  }
+}
+
+
+@include b(tree-node-tabindex) {
+  outline: none;
+}
+
+/* tree-node节点样式 */
+@include b(tree-node-disabled) {
+  @include e(selector) {
+    // @debug &;
+    @include text-disabled();
+  }
+}
+

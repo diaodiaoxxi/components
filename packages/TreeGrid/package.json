@@ -1,0 +1,25 @@
+{
+  "name": "@hui/treegrid",
+  "version": "1.0.0",
+  "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
+  "keywords": [],
+  "author": "hui",
+  "license": "ISC",
+  "main": "dist/treegrid.umd.min.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "http://192.168.102.232:6060/repository/rd_center/"
+  },
+  "scripts": {
+    "build": "node build/index.js",
+    "build:lib": "node build/lib.js",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@hui/scss-utils": "^1.0.2",
+    "@hui/shared-utils": "^1.0.2",
+    "cross-spawn": "^7.0.3"
+  }
+}

@@ -1,0 +1,62 @@
+/* tree-var 
+---------------------------*/
+@import './var.scss';
+
+@import './components/checkbox.scss';
+
+/* tree-node */
+@import './tree-node.scss';
+@import './directory.scss';
+
+/* mixion function
+---------------------------*/
+@import '~@hui/scss-utils';
+
+
+
+/* tree bem
+---------------------------*/
+@include b(tree) {
+  $tree: &;
+
+  position: relative;
+  box-sizing: border-box;
+  color: $tree-text-color;
+  font-size: $tree-font-size;
+  font-variant: tabular-nums;
+  // line-height: $tree-line-height;  // 影响内联布局的高度
+  line-height: 0;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  margin: 0;
+  padding: 0;
+  /* 宽度根据内部元素计算而来；而不是继承父元素的宽度 */
+  // width: fit-content;
+}
+
+@include b(tree-tabindex) {
+  outline: none;
+}
+
+@include b(tree-virtual-list) {
+  width: 100%;
+  overflow-y: auto;
+}
+
+
+// @include b(tree-virtual-item) {
+//   overflow: hidden;
+// }
+
+@include b(tree-not-found){
+  text-align: center;
+  color: $tree-not-found-color;
+  padding-top: 12px;
+  @include e(icon){
+    color: $tree-icon-font-color;
+    font-size: $tree-icon-font-size-not-found;
+  }
+  @include e(text) {
+    line-height: 34px;
+  }
+}

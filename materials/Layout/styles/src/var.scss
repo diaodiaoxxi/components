@@ -1,0 +1,82 @@
+$scrollbar-bgcolor: transparent;
+$sidebar-color: #333;
+$scrollbar-color: rgba(136, 123, 144, 0.6);
+$text-color: #333333;
+$font-family: 'PingFang SC', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif,
+  'Helvetica Neue', Helvetica, 'Hiragino Sans GB', sans-serif;
+$theme-base-color: #4686F2;
+$text-hover-color: #4686F2;
+$base-color: #fff;
+$layout-body-color: #F0F2F5;
+$layout-split-line: 1px solid #ededed;
+
+$layout-tool-tip-bg: rgba(#333, 0.8);
+
+/** topbar --------------------------- **/
+$topbar-height: 48px;
+$topbar-space: 16px;
+$topbar-z-index: 990;
+$topbar-shadow-color: rgba(0, 0, 0, 0.3);
+$topbar-shadow: 0 0 2px $topbar-shadow-color;
+$topbar-bg-color: linear-gradient(270deg, #2b9aff 0%, #2765d8 100%);
+$topbar-text-size: 14px;
+$topbar-text-color: #fff;
+$topbar-left-width: 200px;
+$topbar-logo-width: 90px;
+$topbar-text-width: $topbar-left-width - $topbar-logo-width;
+
+$topbar-sys-item-space: 12px;
+$topbar-sys-item-hover: rgba(#215ac4, 0.35);
+$topbar-sys-item-active: rgba(#215ac4, 0.35);
+$topbar-sys-item-color:rgba(#fff,0.6);
+$topbar-sys-item-active-color: #fff;
+
+
+$topbar-drawer-bg:#fff;
+$topbar-drawer-color:#333;
+$topbar-drawer-item-hover:#eff5ff;
+$topbar-drawer-item-active:#f7f7f7;
+$topbar-drawer-item-icon-color:#999;
+$topbar-drawer-item-sub-color:#999;
+$topbar-drawer-item-split-line: $layout-split-line;
+$topbar-drawer-box-shadow:0 1px 6px 0 rgba(51, 51, 51, 0.15);
+
+$topbar-sys-more-sort-item-border:#d9d9d9;
+$topbar-sys-more-sort-item-color: #4686f2;
+$topbar-sys-more-sort-item-hover-color: #5196ff;
+
+
+
+
+/** sidebar --------------------------- **/
+$sidebar-base-width: 200px;
+$sidebar-collapse-width: 60px;
+$sidebar-bg: #ffffff;
+$sidebar-color: #333;
+$sidebar-expand-icon-color: #353e48;
+$sidebar-expand-split-line: $layout-split-line;
+
+$sidebar-footer-height: 32px;
+$sidebar-head-height: 44px;
+$sidebar-drawer-bg: #fff;
+$sidebar-fullmenu-padding: 0 16px;
+$sidebar-fullmenu-border: $layout-split-line;
+$sidebar-fullmenu-color: #333;
+$sidebar-fullmenu-active-color: #4686f2;
+$sidebar-fullmenu-active-bg: #f6f6f6;
+$sidebar-fullmenu-icon-close-color:#999;
+$sidebar-fullmenu-icon-close-hover-color:#4686f2;
+$sidebar-nest-icon-circle-color:#d8d8d8;
+$sidebar-nest-icon-circle-active-color:#4686f2;
+
+/** navbar --------------------------- **/
+$navbar-height: 32px;
+$navbar-font-color: #333;
+$navbar-bg-color: #fff;
+
+/** content --------------------------- **/
+$content-space: 8px;
+
+
+
+

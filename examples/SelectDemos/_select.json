@@ -1,0 +1,77 @@
+[
+  {
+    "name": "base",
+    "file": "base.vue",
+    "description": "基础使用"
+  },
+  {
+    "name": "size",
+    "file": "size.vue",
+    "description": "size"
+  },
+  {
+    "name": "isArrow",
+    "file": "isArrow.vue",
+    "description": "isArrow"
+  },
+  {
+    "name": "disabled",
+    "file": "disabled.vue",
+    "description": "disabled&readonly"
+  },
+  {
+    "name": "algin",
+    "file": "algin.vue"
+  },
+  {
+    "name": "clearable",
+    "file": "clearable.vue"
+  },
+  {
+    "name": "placeholder",
+    "file": "placeholder.vue"
+  },
+  {
+    "name": "dropdown",
+    "file": "dropdown.vue",
+    "description": "下拉弹窗相关属性"
+  },
+  {
+    "name": "multiple",
+    "file": "multiple.vue",
+    "description": "多选"
+  },
+  {
+    "name": "labelInValue",
+    "file": "labelInValue.vue"
+  },
+  {
+    "name": "zeroToNull",
+    "file": "zeroToNull.vue"
+  },
+  {
+    "name": "isString",
+    "file": "isString.vue"
+  },
+  {
+    "name": "filterable",
+    "file": "filterable.vue"
+  },
+  {
+    "name": "remote",
+    "file": "remote.vue"
+  },
+  {
+    "name": "slots",
+    "file": "slots.vue"
+  },
+  {
+    "name": "option",
+    "file": "option.vue"
+  },
+  {
+    "name": "bigData",
+    "file": "bigData.vue",
+    "description": "大数据支持"
+  }
+]

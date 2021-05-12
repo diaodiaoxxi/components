@@ -1,0 +1,73 @@
+{
+  "hui": {
+    "ajax": {
+      "error": "網絡通信失敗,服務器異常"
+    },
+    "biz": {
+      "addFavourFail": "菜單收藏失敗",
+      "addFavourSuccess": "菜單收藏成功",
+      "delFavourFail": "取消菜單收藏失敗",
+      "delFavourSuccess": "取消菜單收藏成功",
+      "editUser": {
+        "certiNum": "證件號碼",
+        "certiType": "證件類型",
+        "comments": "備註",
+        "email": "郵箱",
+        "fax": "傳真",
+        "filterMsgType": "過濾消息類型",
+        "mobile": "移動電話",
+        "modifyFailed": "修改失敗",
+        "modifySuccess": "修改成功",
+        "modifyUserInfo": "修改用戶信息",
+        "phone": "固定電話",
+        "qualiCerti": "資格證書",
+        "relOrg": "所屬組織",
+        "title": "個人信息",
+        "userName": "用戶名稱",
+        "validFaxNum": "請輸入正確的傳真格式",
+        "validIdCard": "請輸入正確的證件號碼格式",
+        "workStatus": "工作狀態"
+      },
+      "space": {
+        "currentSpace": "當前空間",
+        "default": "默認空間",
+        "success": "切換空間成功",
+        "title": "切換空間",
+        "validTip": "請先選擇你要切換的空間"
+      },
+      "tenant": {
+        "choose": "請選擇租戶",
+        "currentTenant": "當前租戶",
+        "failMsg": "切換租戶失敗！",
+        "successMsg": "切換租戶成功！",
+        "title": "切換租戶",
+        "validTip": "必須選擇一個租戶"
+      }
+    },
+    "common": {
+      "cancel": "取消",
+      "commit": "提交",
+      "register": "註冊",
+      "reset": "重置",
+      "sure": "確定"
+    },
+    "frameLayout": {
+      "allTab": "全部頁面",
+      "appName": "框架導航模板頁",
+      "customPropMenu": "屬性自定義",
+      "customSlotMenu": "插槽自定義",
+      "day": "天",
+      "otherTab": "其他頁面",
+      "pwdExpired": "密碼過期還有",
+      "sureClose": "確認關閉",
+      "tip": "提示"
+    },
+    "frameLayoutDemo": {
+      "bizMenuTab": "子應用頁簽示例",
+      "fooTab": "子應用自定義添加頁簽",
+      "home": "首頁",
+      "systemName": "框架相關示例",
+      "tab": "自定義添加頁簽"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "hui": {
+    "ajax": {
+      "error": "Network communication failed, server abnormal"
+    },
+    "biz": {
+      "addFavourFail": "Menu collection failed",
+      "addFavourSuccess": "Menu collection succeeded",
+      "delFavourFail": "Failed to cancel menu favorite",
+      "delFavourSuccess": "Cancel the menu collection successfully",
+      "editUser": {
+        "certiNum": "ID number",
+        "certiType": "type of certificate",
+        "comments": "Remarks",
+        "email": "mailbox",
+        "fax": "fax",
+        "filterMsgType": "Filter message type",
+        "mobile": "mobile phone",
+        "modifyFailed": "fail to edit",
+        "modifySuccess": "Successfully modified",
+        "modifyUserInfo": "Modify user information",
+        "phone": "Fixed telephone",
+        "qualiCerti": "Qualification certificate",
+        "relOrg": "Organization",
+        "title": "Personal information",
+        "userName": "user name",
+        "validFaxNum": "Please enter the correct fax format",
+        "validIdCard": "Please enter the correct ID number format",
+        "workStatus": "Working status"
+      },
+      "space": {
+        "currentSpace": "Current space",
+        "default": "Default space",
+        "success": "Switch space successfully",
+        "title": "Switch space",
+        "validTip": "Please select the space you want to switch"
+      },
+      "tenant": {
+        "choose": "Please select tenant",
+        "currentTenant": "Current tenant",
+        "failMsg": "Failed to switch tenants!",
+        "successMsg": "Successfully switched tenants!",
+        "title": "Switch tenant",
+        "validTip": "Must choose a tenant"
+      }
+    },
+    "common": {
+      "cancel": "Cancel",
+      "commit": "Submit",
+      "register": "Register",
+      "reset": "Reset",
+      "sure": "Sure"
+    },
+    "frameLayout": {
+      "allTab": "all pages",
+      "appName": "Frame Layout Demo",
+      "customPropMenu": "Attribute customization",
+      "customSlotMenu": "Slot customization",
+      "day": "day",
+      "otherTab": "other pages",
+      "pwdExpired": "Password expired",
+      "sureClose": "Are you sure close",
+      "tip": "prompt"
+    },
+    "frameLayoutDemo": {
+      "bizMenuTab": "Subapp tab example",
+      "fooTab": "Sub app custom tab",
+      "home": "Home",
+      "systemName": "Frame examples",
+      "tab": "Custom add tab"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+/* BEM config */
+$namespace: 'u' !default;
+$element-separator: '-'  !default;
+$modifier-separator: '-' !default;
+$state-prefix: 'is-' !default;
+
+
+/*  -------- tree var -------- */
+$tree-text-color: #333;
+$tree-font-size: 12px !default;
+$tree-height: 28px !default;
+$tree-line-height: 28px !default;
+$tree-icon-font-size: 16px !default;
+$tree-icon-font-color: #999 !default;
+$tree-font-hover-bg: #EFF5FF !default;
+$tree-font-selected-bg: #EFF5FF !default;
+$tree-node-margin: 4px !default;
+$tree-icon-font-color-hover: #5196FF !default;
+$tree-node-filter-color: #4686F2 !default;
+$tree-node-selector-check: #4686F2 !default;
+
+$tree-not-found-color: #999 !default;
+$tree-icon-font-size-not-found: 28px !default;
+
+/* ---------- disabled ---------- */
+$tree-disabled-text-color: #bbbbbb !default;
+
+
+
+@mixin flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@mixin icon-size {
+  font-size: $tree-icon-font-size;
+  width: $tree-icon-font-size;
+  height: $tree-icon-font-size;
+  line-height: $tree-icon-font-size;
+}
+@mixin box-shadow {
+  background: #FFFFFF;
+  box-shadow: 0 1px 6px 0 rgba(51,51,51,0.15);
+  border-radius: 2px;
+}
+
+@keyframes loadingCircle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin text-overflow() {
+  overflow:hidden; //超出的文本隐藏
+  text-overflow:ellipsis; //溢出用省略号显示
+  white-space:nowrap; //溢出不换行
+}
+
+@mixin text-disabled {
+  color: $tree-disabled-text-color;
+  cursor: not-allowed;
+}

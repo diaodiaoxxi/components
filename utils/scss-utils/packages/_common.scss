@@ -1,0 +1,73 @@
+/* Placeholder-------------------------- */
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+      @content;
+    }
+  
+    &::-moz-placeholder {
+      @content;
+    }
+  
+    &:-ms-input-placeholder {
+      @content;
+    }
+  }
+  
+  /* clearfix-------------------------- */
+  @mixin clearfix {
+    $selector: &;
+  
+    @at-root {
+      #{$selector}::before,
+      #{$selector}::after {
+        display: table;
+        content: '';
+      }
+      #{$selector}::after {
+        clear: both;
+      }
+    }
+  }
+  
+  /* vertical-center-------------------------- */
+  @mixin vertical-center {
+    $selector: &;
+    @at-root {
+      #{$selector}::after {
+        display: inline-block;
+        content: '';
+        height: 100%;
+        vertical-align: middle;
+      }
+    }
+  }
+  
+  /* disabled-user-select-------------------------- */
+  @mixin user-select() {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* ellipsis-------------------------- */
+  @mixin ellipsis() {
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+    text-overflow: ellipsis;
+  }
+  
+  /* with-count-------------------------- */
+  @mixin with-count($n) {
+    @if $n == 1 {
+      &:first-child:nth-last-child(1) {
+        @content;
+      }
+    } @else {
+      &:first-child:nth-last-child(#{$n}),
+      &:first-child:nth-last-child(#{$n}) ~ & {
+        @content;
+      }
+    }
+  }

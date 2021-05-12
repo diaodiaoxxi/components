@@ -1,0 +1,87 @@
+[
+  {
+    "name": "base",
+    "file": "base.vue",
+    "description": "【 基础使用 】"
+  },
+  {
+    "name": "multiple",
+    "file": "multiple.vue",
+    "description": "【 选择节点（multiple、selectedKeys）】"
+  },
+  {
+    "name": "bigData",
+    "file": "bigData.vue",
+    "description": "【 大数据 】"
+  },
+  {
+    "name": "showCheckbox",
+    "file": "showCheckbox.vue",
+    "description": "【 复选框选中（showCheckbox、checkedKeys、isBoxRight、checkStrictly）】"
+  },
+  {
+    "name": "expand",
+    "file": "expand.vue",
+    "description": "【 展开/收缩（ defaultExpandAll、expandLevel、expandedKeys）】"
+  },
+  {
+    "name": "filter",
+    "file": "filter.vue",
+    "description": "【 过滤、筛选节点（ filterValue、isTreeFilter、filterNodeMethod ）】"
+  },
+  {
+    "name": "render",
+    "file": "render.vue",
+    "description": "【 自定义节点内容 （render、renderMenu、renderIcon、renderTextTips） 】"
+  },
+  {
+    "name": "lodaData",
+    "file": "lodaData.vue",
+    "description": "【 异步加载数据 （lodaData） 】"
+  },
+  {
+    "name": "disabled",
+    "file": "disabled.vue",
+    "description": "【 禁用 （ disabled ） 树结构对象属性（ selectable、disabled、disableCheckbox ） 】"
+  },
+  {
+    "name": "titleMaxWidth",
+    "file": "titleMaxWidth.vue",
+    "description": "【 titleMaxWidth、blockNode、blockDirectory、isBoxRight 】"
+  },
+  {
+    "name": "positionKey",
+    "file": "positionKey.vue",
+    "description": "【 positionKey、edit、add、del、forceUpdate, getAllTreeNodes 】"
+  },
+  {
+    "name": "transferScrollOptions",
+    "file": "transferScrollOptions.vue",
+    "description": "【 transferScrollOptions(hide、keep) 】"
+  },
+  {
+    "name": "test",
+    "file": "test.vue",
+    "description": "【 test 】"
+  },
+  {
+    "name": "test2",
+    "file": "test2.vue",
+    "description": "【 test2 】"
+  },
+  {
+    "name": "test3",
+    "file": "test3.vue",
+    "description": "【 test3 】"
+  },
+  {
+    "name": "test4",
+    "file": "test4.vue",
+    "description": "【 test4 】"
+  },
+  {
+    "name": "test5",
+    "file": "test5.vue",
+    "description": "【 test5 】"
+  }
+]

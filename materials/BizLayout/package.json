@@ -1,0 +1,24 @@
+{
+  "name": "@hui/biz-frame-layout",
+  "version": "1.12.0-beta.3",
+  "description": "",
+  "keywords": [],
+  "author": "tanhong <tanhong28754@hundsun.com>",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "test": "__tests__"
+  },
+  "publishConfig": {
+    "registry": "http://192.168.102.232:6060/repository/rd_center/"
+  },
+  "scripts": {
+    "build": "hui-build",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@hui/h-frame-layout": "1.12.0",
+    "logdown": "^3.3.1"
+  },
+  "gitHead": "5145a399d3f6032c7599e4c99deab41aaa29ed16"
+}

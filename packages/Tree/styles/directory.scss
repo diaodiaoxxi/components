@@ -1,0 +1,94 @@
+/* tree-var 
+---------------------------*/
+@import './var.scss';
+
+
+/* mixion function
+---------------------------*/
+@import '~@hui/scss-utils';
+
+$tree-prefix-cls: '#{$namespace}-tree';
+$tree-node-prefix-cls: '#{$tree-prefix-cls}-node';
+$tree-body-prefix-cls: '#{$namespace}-select-tree-body';
+
+
+.#{$namespace}-tree.#{$namespace}-tree-block-directory{
+    @include b(tree-node) {
+      // &:not(.#{$tree-node-prefix-cls}-disabled){
+      //   @include e(selector){
+      //     &:hover {
+      //       &::before {
+      //         background: $tree-font-hover-bg;
+      //       }
+      //     }
+      //     &::before {
+      //       position: absolute;
+      //       right: 0;
+      //       left: 0;
+      //       top: 0;
+      //       height: $tree-height;
+      //       transition: all 0.3s;
+      //       content: '';
+      //     }
+      //     > span {
+      //       position: relative;
+      //       z-index: 1;
+      //     }
+      //   }
+      // }
+      @include e(selector){
+        &::before {
+          position: absolute;
+          right: 0;
+          left: 0;
+          top: 0;
+          height: $tree-height;
+          transition: all 0.3s;
+          content: '';
+        }
+        > span {
+          position: relative;
+          z-index: 1;
+        }
+      }
+      &.#{$tree-node-prefix-cls}-disabled{
+        &::before {
+          cursor: not-allowed;
+        }
+      }
+      &:not(.#{$tree-node-prefix-cls}-disabled){
+        @include e(selector){
+          &:hover {
+            &::before {
+              background: $tree-font-hover-bg;
+            }
+          }
+          // &::before {
+          //   cursor: not-allowed;
+          // }
+          // > span {
+          //   position: relative;
+          //   z-index: 1;
+          // }
+        }
+      }
+      @include m(selected){
+        @include e(selector) {
+          &::before {
+            background: $tree-font-selected-bg;
+          }
+        }
+      }
+      @include m(focus){
+        @include e(selector) {
+          &::before {
+            background: $tree-font-hover-bg;
+          }
+        }
+      }
+      > *:not(.#{$tree-node-prefix-cls}-selector):not(.#{$tree-node-prefix-cls}-not-show):not(.#{$tree-node-prefix-cls}-menu) {
+        position: relative;
+        z-index: 1;
+      } 
+    }
+}

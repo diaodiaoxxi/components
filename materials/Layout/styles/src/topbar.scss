@@ -1,0 +1,422 @@
+/* 顶部栏容器
+---------------------------*/
+@mixin hover-active() {
+  &:hover {
+    background-color: $topbar-sys-item-hover;
+  }
+
+  @include when(active) {
+    color: $topbar-sys-item-active-color;
+    background-color: $topbar-sys-item-active;
+  }
+}
+
+@mixin layout-tooltip {
+  // todo tooltip class
+  .u-tooltip-popper[x-placement^='left'] .u-tooltip-arrow {
+    border-left-color: $layout-tool-tip-bg;
+  }
+
+  .u-tooltip-popper[x-placement^='bottom'] .u-tooltip-arrow {
+    border-bottom-color: $layout-tool-tip-bg;
+  }
+
+  .u-tooltip-inner {
+    background: $layout-tool-tip-bg;
+  }
+
+  // v-tooltip 样式整理
+  .u-tooltip-popper.v-tooltip {
+    .u-tooltip-inner {
+      background: $layout-tool-tip-bg;
+    }
+  }
+
+  .u-tooltip-popper.v-tooltip[x-placement^='left'] .u-tooltip-arrow {
+    border-left-color: $layout-tool-tip-bg;
+  }
+
+  .u-tooltip-popper.v-tooltip[x-placement^='top'] .u-tooltip-arrow {
+    border-top-color: $layout-tool-tip-bg;
+  }
+
+  .u-tooltip-popper.v-tooltip[x-placement^='bottom'] .u-tooltip-arrow {
+    border-bottom-color: $layout-tool-tip-bg;
+  }
+}
+
+@include b(layout-head) {
+  display: flex;
+  width: 100%;
+  height: $topbar-height;
+  position: fixed;
+  top: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  background: $topbar-bg-color;
+  color: $topbar-text-color;
+  font-size: $topbar-text-size;
+  z-index: $topbar-z-index;
+  transition: background 0.4s ease;
+
+  @include user-select();
+
+  @include e(left) {
+    flex: 0 0 auto;
+    min-width: $topbar-left-width;
+
+    @include m(item) {
+      margin-left: $topbar-space;
+    }
+  }
+
+  @include e(center) {
+    flex: auto;
+    min-width: 120px;
+
+    @include m(item) {
+      margin-left: $topbar-space;
+    }
+  }
+
+  @include e(right) {
+    flex: none;
+
+    @include m(ctrl-search) {
+      margin-right: 6px;
+    }
+  }
+}
+
+@include b(layout-head-logo) {
+  display: flex;
+  height: $topbar-height;
+  line-height: $topbar-height;
+  overflow: hidden;
+
+  @include e(img) {
+    display: flex;
+    align-items: center;
+    height: $topbar-height;
+    line-height: $topbar-height;
+
+    img {
+      display: block;
+    }
+  }
+
+  @include e(text) {
+    height: $topbar-height;
+    line-height: $topbar-height;
+    color: $topbar-text-color;
+    font-size: $topbar-text-size;
+    text-align: left;
+    @include ellipsis();
+  }
+}
+
+/** 子系统列表 ---------------------------- */
+@include b(layout-head-sys) {
+  height: $topbar-height;
+  padding: 0 0 0 $topbar-space;
+  white-space: nowrap;
+  overflow: hidden;
+
+  @include e(item) {
+    padding: 0 $topbar-sys-item-space;
+    cursor: pointer;
+    display: inline-block;
+    height: $topbar-height;
+    line-height: $topbar-height;
+    color: $topbar-sys-item-color;
+    overflow: hidden;
+    @include hover-active();
+  }
+
+  @include e(all) {
+    color: #fff;
+    width: 40px;
+
+    &.is-active {
+      color: #ffcd34;
+    }
+
+    @include layout-tooltip();
+  }
+
+  @include e(all-icon) {
+    display: inline-block;
+    // height: $topbar-height;
+    // line-height: $topbar-height;
+
+    &.is-expand {
+      animation-name: star-all-expand;
+      animation-duration: 0.4s;
+    }
+  }
+}
+
+/** 更多子系统弹窗 ---------------------------- */
+@include b(layout-head-sys-more) {
+  $topbar-sys-more-bg: $topbar-drawer-bg !default;
+  $topbar-sys-more-item-color: $topbar-drawer-color !default;
+  $topbar-sys-more-item-hover: $topbar-drawer-item-hover !default;
+  $topbar-sys-more-item-active: $topbar-drawer-item-active !default;
+
+  @include e(popper) {
+    position: absolute;
+    top: $topbar-height;
+    left: 0;
+    background: $topbar-sys-more-bg;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: $topbar-drawer-box-shadow;
+
+    @include when(has-sort) {
+      padding: 6px 0 (28px + 1px);
+    }
+
+    @include m(wrap) {
+      padding: 6px 0;
+      max-height: 5 * 32px + 2 * 6px;
+      overflow-y: auto;
+    }
+
+    @include m(item) {
+      padding: 0 16px;
+      color: $topbar-sys-more-item-color;
+      height: 32px;
+      line-height: 32px;
+
+      &:hover {
+        background: $topbar-sys-more-item-hover;
+      }
+
+      @include when(active) {
+        background: $topbar-sys-more-item-active;
+        font-weight: bold;
+      }
+    }
+
+    @include m(sort-item) {
+      text-align: center;
+      padding: 0 16px;
+      height: 28px;
+      line-height: 28px;
+      color: $topbar-sys-more-sort-item-color;
+      border-top: 1px solid $topbar-sys-more-sort-item-border;
+      &:hover {
+        color: $topbar-sys-more-sort-item-hover-color;
+      }
+    }
+  }
+}
+
+@include b(layout-head-ctrl) {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  @include e(icon) {
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+    height: $topbar-height;
+    @include hover-active();
+  }
+
+  @include e(separator) {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 6px;
+    height: $topbar-height;
+
+    &:after {
+      content: '';
+      width: 1px;
+      height: 16px;
+      background: rgba(#fff, 0.3);
+    }
+  }
+
+  @include e(fullmenu) {
+    @include layout-tooltip();
+  }
+
+  @include e(user) {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    margin-right: 12px;
+    height: $topbar-height;
+    @include hover-active();
+  }
+}
+
+// TODO 搜索栏样式拆分
+@include b(layout-head-search-item) {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  @include e(text) {
+    max-width: 80%;
+    @include ellipsis();
+  }
+
+  @include e(icon) {
+    flex: none;
+    color: #d9d9d9;
+    @include when(favour) {
+      color: #ffc103;
+    }
+  }
+}
+
+@include b(layout-head-ctrl-search) {
+  position: relative;
+  padding: 0 6px;
+
+  .h-layout-select .h-layout-select-head {
+    padding-right: 8px + 16px + 8px ;
+    padding-left: 8px;
+    height: 28px;
+    line-height: 28px;
+  }
+
+  .h-layout-select.is-has-value .h-layout-select-head {
+    padding-right: 8px + 16px + 8px + 16px;
+  }
+
+  .h-layout-select .h-layout-select-selection-focused {
+    .h-layout-select-input {
+      color: #333;
+    }
+
+    @include e(icon) {
+      color:#4686F2;
+    }
+
+    @include e(clear-icon) {
+      color: #4686F2;
+    }
+  }
+  input.h-layout-select-input {
+    height: 28px;
+    line-height: 28px;
+    width: 200px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @include e(icon) {
+    color: #fff;
+    position: absolute;
+    right: 8px;
+    top: 0;
+  }
+
+  @include e(clear-icon) {
+    color: #fff;
+    position: absolute;
+    right: 8px + 16px + 8px;
+    top: 0;
+  }
+}
+
+@include b(layout-head-user-drawer) {
+  $user-drawer-width: 232px;
+  $user-drawer-bg: $topbar-drawer-bg;
+  $user-drawer-color: $topbar-drawer-color;
+  $user-drawer-font-size: 12px;
+  $user-drawer-item-space: 16px;
+  $user-drawer-item-height: 32px;
+  $user-drawer-item-icon-size: 12px;
+  $user-drawer-item-icon-color: $topbar-drawer-item-icon-color;
+  $user-drawer-item-sub-color: $topbar-drawer-item-sub-color;
+  $user-drawer-item-hover: $topbar-drawer-item-hover;
+  $user-drawer-group-space: 6px;
+  $user-drawer-group-border: $topbar-drawer-item-split-line;
+
+  position: absolute;
+  top: $topbar-height;
+  right: 12px;
+  width: 232px;
+  background: $user-drawer-bg;
+  color: $user-drawer-color;
+  box-shadow: $topbar-drawer-box-shadow;
+  transition: background 0.4s ease-in-out;
+
+  @include e(info) {
+    @include m(name) {
+      padding: 0 $user-drawer-item-space;
+      height: 26px;
+      line-height: 26px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    @include m(sub) {
+      padding: 0 0 0 $user-drawer-item-space;
+      color: $user-drawer-item-sub-color;
+      height: 24px;
+      line-height: 24px;
+      font-size: $user-drawer-font-size;
+    }
+  }
+
+  @include e(group) {
+    padding: $user-drawer-group-space 0;
+    border-bottom: $user-drawer-group-border;
+  }
+
+  @include e(item) {
+    display: flex;
+    align-items: center;
+    padding: 0 $user-drawer-item-space;
+    height: $user-drawer-item-height;
+    line-height: $user-drawer-item-height;
+    font-size: $user-drawer-font-size;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      background: $user-drawer-item-hover;
+    }
+
+    @include m(icon) {
+      font-size: $user-drawer-item-icon-size;
+      color: $user-drawer-item-icon-color;
+      margin-right: 8px;
+    }
+  }
+
+  @include e(dot-icon) {
+    display: block;
+    position: absolute;
+    color: #fff;
+    top: 0;
+    right: -1px;
+    transform-origin: center;
+    font-size: 12px;
+  }
+}
+
+@keyframes star-all-expand {
+  0% {
+    font-size: 16px;
+    transform: rotate(0);
+  }
+
+  50% {
+    font-size: 20px;
+    transform: rotate(180deg);
+  }
+
+  100% {
+    font-size: 16px;
+    transform: rotate(360deg);
+  }
+}

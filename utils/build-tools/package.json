@@ -1,0 +1,31 @@
+{
+  "name": "@hui/build-tools",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "tanhong <tanhong28754@hundsun.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "index.js",
+  "bin": {
+    "hui-build": "bin/hui-build.js"
+  },
+  "publishConfig": {
+    "registry": "http://192.168.102.232:6060/repository/rd_center/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.hundsun.com/HUI/hui-component2.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "node build/index.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.20",
+    "signale": "^1.4.0",
+    "update-notifier": "^5.0.1",
+    "yargs-parser": "^20.2.4"
+  }
+}

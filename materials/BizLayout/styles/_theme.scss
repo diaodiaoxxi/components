@@ -1,0 +1,6 @@
+@mixin layout-theme-dark {
+  body[data-hui-layout-theme='dark'],
+  .h-layout[theme='dark'] {
+    @content
+  }
+}

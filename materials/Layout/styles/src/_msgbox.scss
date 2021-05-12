@@ -1,0 +1,95 @@
+/**
+
+  layout 中 根据 2.0 设计稿 样式覆盖 hui 1.0 msgbox
+  msgbox 中 h-layout-msg-input  覆盖 h-input 样式
+  msgbox 中 h-layout-msg-button  覆盖 h-button 样式
+--------------------------------------- */
+$layout-msg-box-height: auto !default;
+@mixin msg-box{
+  .h-modal-content {
+    border-radius: 2px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+
+    input[type="password"] {
+      letter-spacing: 6px;
+    }
+
+    input[type="password"]::-webkit-input-placeholder {
+      letter-spacing: 0;
+    }
+    input[type="password"]:-moz-placeholder {
+      letter-spacing: 0;
+    }
+    input[type="password"]::-moz-placeholder {
+      letter-spacing: 0;
+    }
+    input[type="password"]:-ms-input-placeholder {
+      letter-spacing: 0;
+    }
+
+    .h-modal-header {
+      font-size: 14px;
+      padding: 0 16px;
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px solid #ededed;
+    }
+
+    .h-modal-header-inner {
+      height: 40px;
+      line-height: 40px;
+    }
+
+    .h-modal-body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: $layout-msg-box-height;
+      padding: 24px 0;
+
+      .h-form-item{
+        margin-bottom: auto;
+      }
+    }
+
+    .h-modal-footer {
+      height: 48px;
+      padding: 0 20px 20px;
+      border-top: none;
+    }
+
+    .h-modal-close{
+      top: 8px;
+      right: 20px;
+      color: #999999;
+      .h-icon-close{
+        font-size: 18px;
+      }
+    }
+
+    .h-layout-form{
+      .h-form-item{
+        margin-bottom: 4px;
+      }
+    }
+
+
+    .h-layout-msg-input {
+      padding: 0;
+      width: 244px;
+      .h-input {
+        height: 28px;
+        line-height: 28px;
+      }
+    }
+
+    .h-layout-msg-btn {
+      height: 28px;
+      line-height: 27px;
+      padding: 0;
+      width: 52px;
+    }
+  }
+
+
+}

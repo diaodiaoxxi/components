@@ -1,0 +1,43 @@
+/*common-----------------------------------------*/
+$layout-body-color: #172029;
+$layout-split-line: 1px solid #485565;
+
+$layout-tool-tip-bg: #2e3a4c;
+
+/*topbar-----------------------------------------*/
+$topbar-bg-color: #35404f;
+$topbar-sys-item-hover: #2c3847;
+$topbar-sys-item-active: #19212b;
+$topbar-sys-item-color:rgba(#fff,0.6);
+$topbar-sys-item-active-color: #4686f2;
+ 
+$topbar-drawer-bg: #2c3847;
+$topbar-drawer-color: #fff;
+$topbar-drawer-item-hover: #32496c;
+$topbar-drawer-item-active: #35404f;
+$topbar-drawer-item-icon-color: rgba(#fff, 0.6);
+$topbar-drawer-item-sub-color: rgba(#fff, 0.7);
+$topbar-drawer-item-split-line: $layout-split-line;
+$topbar-drawer-box-shadow: 0 1px 6px 0 rgba(7, 12, 21, 0.2);
+
+$topbar-sys-more-sort-item-border:#263140;
+$topbar-sys-more-sort-item-color: #4686f2;
+$topbar-sys-more-sort-item-hover: #32496c;
+
+/* sidebar---------------------------------------*/
+$sidebar-bg: #202935;
+$sidebar-color:#fff;
+$sidebar-expand-icon-color: #627288;
+$sidebar-expand-split-line: 1px solid #19212b;
+$sidebar-fullmenu-border: 1px solid #19212b;
+$sidebar-fullmenu-color: #fff;
+$sidebar-fullmenu-active-bg: #2c3847;
+$sidebar-fullmenu-active-color: #4686f2;
+$sidebar-fullmenu-icon-close-color: #fff;
+$sidebar-nest-icon-circle-color: rgba(#fff, 0.5);
+$sidebar-nest-icon-circle-active-color: rgba(#fff,1);
+$sidebar-drawer-bg: #202935;
+
+/* navbar---------------------------------------*/
+$navbar-bg-color: #202935;
+$navbar-font-color: #fff;

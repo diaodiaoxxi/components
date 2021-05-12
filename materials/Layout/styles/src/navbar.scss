@@ -1,0 +1,20 @@
+/* 页面标签栏
+---------------------------*/
+@include b(layout-tabbar) {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $navbar-height;
+  background: $navbar-bg-color;
+  color: $navbar-font-color;
+  text-align: left;
+  z-index: 10;
+  transition: background 0.4s ease-in-out;
+
+  .h-layout-icon-arrow-left,
+  .h-layout-icon-arrow-right {
+    font-size: 14px;
+  }
+}

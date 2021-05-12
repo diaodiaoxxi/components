@@ -1,0 +1,57 @@
+// BaseEmptyTip.scss
+@import '~@hui/scss-utils';
+
+$b--empty-tip-bg: #fff !default;
+$b--empty-tip-width: 100% !default;
+$b--empty-tip-height: 100% !default;
+$b--empty-tip-color: #999 !default;
+$b--empty-tip-font-size: 12px !default;
+$b--empty-tip-icon-width: 50px !default;
+$b--empty-tip-icon-height: 50px !default;
+$b--empty-tip-loading-icon-width: 35px !default;
+$b--empty-tip-loading-icon-height: 35px !default;
+
+@include b(base-tip) {
+  text-align: center;
+  width: $b--empty-tip-width;
+  height: $b--empty-tip-height;
+  color: $b--empty-tip-color;
+  font-size: $b--empty-tip-font-size;
+  background: $b--empty-tip-bg;
+  @include e(icon) {
+    display: block;
+    margin: 0 auto;
+    width: $b--empty-tip-icon-width;
+    height: $b--empty-tip-icon-height;
+  }
+
+  @include e(text) {
+    margin-top: 8px;
+    line-height: 12px;
+  }
+
+  @include e(loading) {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    @include flex-middle();
+  }
+
+  @include e(empty) {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    @include flex-middle();
+  }
+
+  @include e(loading-icon) {
+    width: $b--empty-tip-loading-icon-width;
+    height: $b--empty-tip-loading-icon-height;
+    @include rotate-motion();
+  }
+
+  @include e(empty-icon) {
+    margin-bottom: - $b--empty-tip-icon-height * 0.2;
+  }
+
+}

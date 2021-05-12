@@ -1,0 +1,132 @@
+[
+  {
+    "name": "base",
+    "file": "base.vue",
+    "description": "【 基础使用（disabled、readonly、showTitle） 】"
+  },
+  {
+    "name": "base2",
+    "file": "base2.vue",
+    "description": "【 基础使用2 】"
+  },
+  {
+    "name": "valueKey",
+    "file": "valueKey.vue",
+    "description": "【 valueKey、lablekey 】"
+  },
+  {
+    "name": "singeCheck",
+    "file": "singeCheck.vue",
+    "description": "【 单选 】"
+  },
+  {
+    "name": "multiple",
+    "file": "multiple.vue",
+    "description": "【 多选（multiple、multHeadType、maxTagPlaceholder、checkStrictly、isString、selectPaste） 】"
+  },
+  {
+    "name": "itemHeight",
+    "file": "itemHeight.vue",
+    "description": "【 itemHeight 】"
+  },
+  {
+    "name": "bigData",
+    "file": "bigData.vue",
+    "description": "【 大数据 】"
+  },
+  {
+    "name": "dropWidth",
+    "file": "dropWidth.vue",
+    "description": "【 dropWidth、maxDropWidth、widthAdaption 】"
+  },
+  {
+    "name": "loading",
+    "file": "loading.vue",
+    "description": "【 loading 】"
+  },
+  {
+    "name": "isString",
+    "file": "isString.vue",
+    "description": "【 isString 】"
+  },
+  {
+    "name": "notFound",
+    "file": "notFound.vue",
+    "description": "【 notFound 】"
+  },
+  {
+    "name": "filter",
+    "file": "filter.vue",
+    "description": "【 过滤、筛选节点（ 自定义 filterNodeMethod ）】"
+  },
+  {
+    "name": "title",
+    "file": "title.vue",
+    "description": "【 showTitle、 renderTextTips 】"
+  },
+  {
+    "name": "transfer",
+    "file": "transfer.vue",
+    "description": "【 transfer、placement、autoPlacement 】"
+  },
+  {
+    "name": "showCheckedStrategy",
+    "file": "showCheckedStrategy.vue",
+    "description": "【 showCheckedStrategy】"
+  },
+  {
+    "name": "placeholder",
+    "file": "placeholder.vue",
+    "description": "【 placeholder 】"
+  },
+  {
+    "name": "slot",
+    "file": "slot.vue",
+    "description": "【 slot（loading、emptyList）、notFoundText 】"
+  },
+  {
+    "name": "keycode",
+    "file": "keycode.vue",
+    "description": "【 keycode（isBackClear） 】"
+  },
+  {
+    "name": "method",
+    "file": "method.vue",
+    "description": "【 method方法（onFocus、onBlur） 】"
+  },
+  {
+    "name": "event",
+    "file": "event.vue",
+    "description": "【 event（on-change、on-focus、on-blur、on-click） 】"
+  },
+  {
+    "name": "lodaData",
+    "file": "lodaData.vue",
+    "description": "【 异步加载数据 （lodaData） 】"
+  },
+  {
+    "name": "disabled",
+    "file": "disabled.vue",
+    "description": "【 禁用 （ disabled ） 树结构对象属性（ selectable、disabled、disableCheckbox ） 】"
+  },
+  {
+    "name": "titleMaxWidth",
+    "file": "titleMaxWidth.vue",
+    "description": "【 titleMaxWidth、blockNode、blockDirectory、isBoxRight 】"
+  },
+  {
+    "name": "test",
+    "file": "test.vue",
+    "description": "【 test 】"
+  },
+  {
+    "name": "test1",
+    "file": "test1.vue",
+    "description": "【 test1 】"
+  },
+  {
+    "name": "test2",
+    "file": "test2.vue",
+    "description": "【 test2 】"
+  }
+]

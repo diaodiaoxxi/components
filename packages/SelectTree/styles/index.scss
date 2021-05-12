@@ -1,0 +1,49 @@
+/* tree-var 
+---------------------------*/
+@import './var.scss';
+
+/* mixion function
+---------------------------*/
+$select-tree: $namespace + '-tree';
+$select-tree-node: $namespace + '-tree-node';
+$select-tree-node-blockDirectory: $select-tree-node + '-blockDirectory';
+
+@import '~@hui/scss-utils';
+
+@include b(select-tree-body){
+
+  .#{$select-tree} {
+    display: inline-block !important;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+    /* 在 tree-body 下使用的样式 */
+    .#{$namespace}-tree.#{$namespace}-tree-block-directory {
+      @include b(tree-node) {
+
+        /* 选中时的状态 */
+        @include m(selected){
+          @include blockDirectory-selected();
+          @include e(selector) {
+            &::before {
+              background: $select-tree-node-selected-bg;
+            }
+          }
+        }
+
+        /* focusIndex 聚焦时的状态 */
+        @include m(focus){
+          @include blockDirectory-focus();
+          @include e(selector) {
+            &::before {
+              background: $select-tree-node-focus-bg;
+            }
+          }
+        }
+
+      }
+    }
+}
+
+

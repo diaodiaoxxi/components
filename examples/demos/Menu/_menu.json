@@ -1,0 +1,17 @@
+[
+  {
+    "name": "base",
+    "file": "base.vue",
+    "description": "基础使用"
+  },
+  {
+    "name": "sidebar",
+    "file": "sidebar.vue",
+    "description": "侧边"
+  },
+  {
+    "name": "collapse",
+    "file": "collapse.vue",
+    "description": "可折叠"
+  }
+]

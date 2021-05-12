@@ -1,0 +1,136 @@
+- 
+  需求名称: 【workertable】【属性】 gridData 属性
+  需求描述: 数据源
+  验收标准: 
+    说明: 数据源
+    参数类型: gridItem[]
+
+
+- 
+  需求名称: 【workertable】【属性】 initGridData 属性
+  需求描述: 点击重置恢复的数据源
+  验收标准: 
+    说明: 点击重置恢复的数据源
+    参数类型: gridItem[]
+
+
+- 
+  需求名称: 【workertable】【gridItem属性】i 属性
+  需求描述: 栅格中元素的ID,没有会自动生成一个
+  验收标准: 
+    说明: 栅格中元素的ID,没有会自动生成一个
+    参数类型: string
+
+- 
+  需求名称: 【workertable】【gridItem属性】x 属性
+  需求描述: 标识栅格元素位于第几列，需为自然数
+  验收标准: 
+    说明: 标识栅格元素位于第几列，需为自然数
+    参数类型: number
+
+- 
+  需求名称: 【workertable】【gridItem属性】y 属性
+  需求描述: 标识栅格元素位于第几行，需为自然数
+  验收标准: 
+    说明: 标识栅格元素位于第几行，需为自然数
+    参数类型: number
+
+- 
+  需求名称: 【workertable】【gridItem属性】w 属性
+  需求描述: 标识栅格元素的初始宽度，值为colWidth的倍数
+  验收标准: 
+    说明: 标识栅格元素的初始宽度，值为colWidth的倍数
+    参数类型: number
+
+- 
+  需求名称: 【workertable】【gridItem属性】h 属性
+  需求描述: 标识栅格元素的初始高度，值为rowHeight的倍数
+  验收标准: 
+    说明: 标识栅格元素的初始高度，值为rowHeight的倍数
+    参数类型: number
+
+- 
+  需求名称: 【workertable】【gridItem属性】minW 属性
+  需求描述: 栅格元素的最小宽度，如果w小于minW，则minW的值会被w覆盖
+  验收标准: 
+    说明: 栅格元素的最小宽度，如果w小于minW，则minW的值会被w覆盖
+    参数类型: number
+
+- 
+  需求名称: 【workertable】【gridItem属性】minH 属性
+  需求描述: 栅格元素的最小高度，如果h小于minH，则minH的值会被h覆盖
+  验收标准: 
+    说明: 栅格元素的最小高度，如果h小于minH，则minH的值会被h覆盖
+    参数类型: number
+
+- 
+  需求名称: 【workertable】【gridItem属性】static 属性
+  需求描述: 标识栅格元素是否为静态的（无法拖拽、调整大小或被其他元素移动）
+  验收标准: 
+    说明: 标识栅格元素是否为静态的（无法拖拽、调整大小或被其他元素移动）
+    参数类型: boolean
+
+- 
+  需求名称: 【workertable】【gridItem属性】title 属性
+  需求描述: 标识栅格元素标题文本
+  验收标准: 
+    说明: 标识栅格元素标题文本,为空时不显示标题
+    参数类型: string
+
+- 
+  需求名称: 【workertable】【gridItem属性】componentName 属性
+  需求描述: 栅格元素内容-挂载的组件名称(需要在Vue.component 注册组件)
+  验收标准: 
+    说明: 栅格元素内容-挂载的组件名称(需要在Vue.component 注册组件)
+    参数类型: string
+
+- 
+  需求名称: 【workertable】【gridItem属性】html 属性
+  需求描述: 栅格元素内容-挂载的html内容(组件名称优先级更高) 栅格元素内容
+  验收标准: 
+    说明: 栅格元素内容-挂载的html内容(组件名称优先级更高) 栅格元素内容
+    参数类型: string
+
+- 
+  需求名称: 【workertable】【事件名称】 edit 事件
+  需求描述: 编辑/配置布局元素时触发
+  验收标准: 
+    说明: 编辑/配置布局元素时触发
+    回调参数: gridData
+
+- 
+  需求名称: 【workertable】【事件名称】 reset 事件
+  需求描述: 重置布局元素时触发(个人信息栏重置工作区触发)
+  验收标准: 
+    说明: 重置布局元素时触发(个人信息栏重置工作区触发)
+    回调参数: gridData
+
+
+- 
+  需求名称: 【workertable】【事件名称】 confirm 事件
+  需求描述: 点击确认操作按钮时触发
+  验收标准: 
+    说明: 点击确认操作按钮时触发
+    回调参数: gridData
+
+- 
+  需求名称: 【workertable】【事件名称】 recover 事件
+  需求描述: 点击取消按钮时触发(恢复编辑前布局)
+  验收标准: 
+    说明: 点击取消按钮时触发(恢复编辑前布局)
+    回调参数: gridData
+
+- 
+  需求名称: 【workertable】【事件名称】 create-item 事件
+  需求描述: 点击新增按钮时触发
+  验收标准: 
+    说明: 点击新增按钮时触发
+    回调参数: -
+
+
+- 
+  需求名称: 【workertable】【事件名称】 delete-item 事件
+  需求描述: 点击 gridItem 角标 关闭图标按钮时触发
+  验收标准: 
+    说明: 点击 gridItem 角标 关闭图标按钮时触发
+    回调参数: gridItem,gridData

@@ -1,0 +1,498 @@
+/* select-var 
+---------------------------*/
+@import './var.scss';
+
+// TODO 样式整理到poptip包里去
+@import './poptip.scss';
+
+
+/* mixion function
+---------------------------*/
+@import '~@hui/scss-utils';
+
+
+/* select bem
+---------------------------*/
+@include b(selector) {
+  $select: &;
+
+  display: inline-block;
+  width: 100%;
+  padding: 0 $select-box-shadow-width;
+  box-sizing: border-box;
+  vertical-align: $select-vertical-align;
+  color: $select-text-color;
+  font-size: $select-font-size-base;
+  height: $select-height-default;
+  position: relative;
+
+  min-width: $select-min-width;
+
+  // TODO 自适应高度
+  &.adapt-height {
+    min-height: $select-height-default;
+    height: auto;
+  }
+
+  &:hover{
+    @include se(clear){
+      // @debug &;
+      display: block;
+    }
+  }
+
+  @include e(head) {
+    // TODO head-padding
+    // padding-left: $select-padding-base - $select-box-shadow-width;
+    padding-left: $select-padding-base;
+    padding-right: $select-padding-base + $select-head-icon-size - $select-box-shadow-width;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    // position: relative;
+
+    @include se(right-icon) {
+      // position: absolute;
+      // top: 50%;
+      // right: $select-padding-base;
+      line-height: 1;
+      // margin-top: -($select-head-icon-size / 2) + 1px;
+      font-size: $select-head-icon-size;
+      color: $select-head-icon-color;
+      transition: all 0.2s ease-in-out;
+    }
+
+    @include se(right) {
+      // @debug &;
+      padding: 0 8px;
+      position: absolute;
+      right: 3px;
+      top: 0px;
+      display: flex;
+      align-items: center;
+      height: $select-height-default - 2px; // 多选下 input 会把 head 撑开，临时处理
+      line-height: $select-height-default - 2px;
+      &>i:not(:last-child) {
+        margin-right: 4px;
+      }
+    }
+
+    @include se(arrow) {
+      right: $select-icon-arrow-right;
+    }
+
+    @include se(clear) {
+      font-size: $select-icon-clear-size;
+      // margin-top: - $select-icon-clear-size / 2;
+      right: $select-icon-clear-right;
+    }
+
+    @include se(loading) {
+      right: $select-icon-arrow-right;
+    }
+
+    @include when(clearable) {
+      padding-right: $select-icon-clear-size + $select-icon-clear-right ;
+    }
+
+    @include when(multiple){
+      // padding-left:$select-tag-space;
+    }
+
+    @include when(multiple-tag){
+      padding-left: 4px;
+      @include e(input){
+        padding-left: 4px;
+      }
+    }
+    @include when(multiple-text){
+      padding-left: 4px;
+      @include e(input){
+        padding-left: 4px;
+      }
+    }
+
+    /* 在mulHeadType=text场景下，由于文本需要变色，交互上不一样，input需要设置absolute */
+    @include when(multiple-text){
+      @include e(input){
+        position: absolute;
+        left: 7px; // box-shadow宽度 + border-width
+        top: 1px;
+      }
+    }
+    
+  }
+
+  @include e(selection) {
+    display: block;
+    box-sizing: border-box;
+    height: $select-height-default;
+    line-height: $select-height-default - $select-head-border-width * 2;
+    outline: none;
+    // user-select: none;
+    cursor: pointer;
+    background-color: $select-head-bg-default;
+    border-radius: $select-head-border-radius;
+    border: $select-head-border;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      @include hover();
+    }
+  }
+
+  @include e(tag) {
+    $margin: ( $select-height-default - $select-tag-height - $select-border-width * 2 )/2;
+    $lineHeight: $select-tag-height - ($select-tag-border-width * 2);
+    position: relative;
+    box-sizing: border-box;
+    margin: $margin $select-tag-space $margin 0;
+    max-width: $select-tag-width-max;
+    height: $select-tag-height;
+    line-height: $lineHeight;
+    padding-right: $select-tag-padding-right;
+    padding-left: $select-tag-padding-left;
+    background: $select-tag-background;
+    border: $select-tag-border;
+    border-radius: $select-tag-border-radius;
+    font-size: $select-tag-font-size;
+    cursor: pointer;
+    @include ellipsis();
+
+    @include when(more){
+      padding-right: $select-tag-space;
+      padding-left: $select-tag-space;
+    }
+
+    @include m(disabled) {
+      padding-right: $select-tag-padding-left;
+      @include tag-disabled();
+    }
+    @include m(readonly) {
+      padding-right: $select-tag-padding-left;
+    }
+
+    @include m(text){
+      display: inline-block;
+      width: 100%;
+      @include ellipsis();
+    }
+
+    i[name='close'] {
+      position: absolute;
+      top: 0;
+      right: $select-tag-space;
+      font-size: $select-tag-font-size;
+      color: $select-tag-close-color;
+      cursor: pointer;
+    }
+
+    // todo 文本 tag
+    &.#{$namespace}-text-tag {
+      display: inline-block;
+      border: none !important;
+      border-radius: 0;
+      margin: 0;
+      background: transparent !important;
+      padding-right: 2px;
+
+      &:focus {
+        outline: none;
+        background: #bdddfb !important;
+      }
+
+
+      .#{$namespace}-text-tag-max {
+        background: #34c3fe;
+        color: #fff;
+        border-radius: 10px;
+        padding: 0 6px;
+      }
+    }
+  }
+
+  @include e(text-tags) {
+    display: block;
+    height: 100%;
+    width: 100%;
+    font-size: $select-tag-font-size;
+    @include ellipsis();
+
+    @include m(focused) {
+      color: #bfbfbf !important;
+    }
+  }
+
+  @include e(input) {
+    display: inline-block;
+    max-width: 100%;
+    // max-width: calc(100% - 56px);
+    height: $select-height-default - 2px; // 多选下 input 会把 head 撑开，临时处理
+    line-height: $select-height-default - 2px;
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: $select-head-input-padding;
+    font-size: $select-head-input-font-size;
+    vertical-align: top;
+    outline: none;
+    border: none;
+    color: $select-head-input-color;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    @include placeholder();
+    @include ellipsis();
+    &::placeholder {
+      color: $select-placeholder-color;
+      font-size: $select-placeholder-font-size;
+    }
+  }
+
+  @include share-rule(value) {
+    display: block;
+    height: $select-height-default - $select-head-border-width * 2;
+    line-height: $select-height-default - $select-head-border-width * 2;
+    width: 100%;
+    font-size: $select-head-font-size;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @include b(selector-placeholder) {
+    @include extend-rule(value);
+    color: $select-placeholder-color;
+    font-size: $select-placeholder-font-size;
+    padding-left: 4px;
+  }
+
+  @include b(selector-selected-text) {
+    font-size: $select-placeholder-font-size;
+    padding-left: 4px;
+  }
+
+  @include b(selector-selected-value) {
+    @include extend-rule(value);
+    color: $select-text-color;
+    // font-size: $select-placeholder-font-size;
+  }
+
+  // @include b(selection-focused) {
+  // }
+
+  @include hui-when(focused) {
+    @include b(selector-selection) {
+      @include active();
+      z-index: 10;
+    }
+  }
+
+  @include hui-when(visible) {
+    @include b(selector-selection) {
+      // @include active();
+      z-index: 10;
+    }
+    @include b(selector-head-arrow) {
+      transform: rotate(180deg) translateY(1px);
+    }
+  }
+
+  @include hui-when(disabled) {
+    @include b(selector-selection) {
+      @include disabled();
+    }
+
+    @include b(selector-selected-value){
+      color: $input-disabled-color;
+    }
+
+
+    // @include b(selector-input) {
+    //   cursor: not-allowed;
+    // }
+  }
+
+  @include hui-when(readonly) {
+    @include b(selector-selection) {
+      @include readonly();
+    }
+
+    @include b(selector-input) {
+      cursor: default;
+    }
+  }
+
+  @include hui-when(single) {
+    position: relative;
+  }
+
+  @include hui-when(multiple) {
+    &.adapt-height {
+      #{$select}-selection {
+        min-height: $input-height-base;
+        height: auto;
+      }
+    }
+  }
+
+  @include hui-when(small) {
+    border-radius: 3px;
+    @include size($select, $select-height-small);
+  }
+
+  @include hui-when(large) {
+    @include size($select, $select-height-large, $font-size-base);
+  }
+
+  // @include hui-when(left) {
+  //   @include align($select, left);
+  // }
+
+  // @include hui-when(center) {
+  //   @include align($select, center);
+  // }
+
+  // @include hui-when(right) {
+  //   @include align($select, right);
+  // }
+}
+
+
+@include b(selector-dropdown) {
+  position: absolute;
+  width: inherit;
+  margin: $select-dropdown-margin;
+  background-color: $select-dropdown-background-color;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: $select-dropdown-font-color;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  z-index: $select-dropdown-zindex;
+  
+  &:focus{
+    @debug &;
+    outline: none;
+  }
+
+  @include hui-when(transfer) {
+    z-index: $select-dropdown-zindex + 100;
+  }
+
+  @include e(content) {
+    max-height: $select-dropdown-height-max;
+    margin: $select-dropdown-padding 0;
+    overflow: auto;
+    @include select-scroll-bar();
+    // &:hover {
+    //   overflow: auto;
+    // }
+  }
+
+  @include e(content-nolimit) {
+    max-height: none;
+  }
+
+  @include e(not-found) {
+    text-align: center;
+  }
+
+  @include e(no-more) {
+    text-align: center;
+  }
+
+  @include e(loading) {
+    @include select-loading-dropdown();
+    
+    @include b(select-loading) {
+      animation: load 1s linear infinite;
+      @keyframes load {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+}
+
+@include b(selector-loading) {
+  display: inline-block;
+  animation: load 1s linear infinite;
+  width: $select-loading-svg-width;
+  height: $select-loading-svg-width;
+  @keyframes load {
+    from {
+      transform-origin: center;
+      transform: rotate(0deg);
+    }
+    to {
+      transform-origin: center;
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@include b(selector-ctrl-check-all) {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid $select-border-color;
+  padding: 5px;
+
+  &.is-head {
+    margin-top: 8px;
+    margin-bottom: -8px;
+    border-bottom: 1px solid $select-border-color;
+  }
+}
+
+@include b(selector-ctrl-create-option) {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid $select-border-color;
+  padding: 5px;
+
+  &.is-head {
+    margin-top: 8px;
+    margin-bottom: -8px;
+    border-bottom: 1px solid $select-border-color;
+  }
+}
+
+@include b(selector-tag-more-poptip) {
+  .#{$namespace}-poptip-body{
+    padding: 8px 0;
+  }
+  
+  .#{$namespace}-selector.#{$namespace}-selector-tag-pop-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    max-width: 200px;
+    max-height: 200px;
+    padding: 0 $select-padding-base;
+    @include select-scroll-bar();
+  }
+}
+
+@include b(selector-not-found){
+  text-align: center;
+  color: $select-not-found-color;
+  font-size: $select-not-found-font-size;
+  padding-top: 12px;
+  min-width: $select-min-width;
+  @include e(icon){
+    width: $select-not-found-icon-width;
+    height: $select-not-found-icon-height;
+    display: block;
+    margin: 0 auto;
+  }
+  @include e(text) {
+    line-height: 34px;
+  }
+}

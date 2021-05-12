@@ -1,0 +1,85 @@
+<script>
+import { PropTypes } from '@hui/shared-utils'
+import Locale from '@hui/shared-utils/vue-mixins/locale'
+import { mapSelectProps } from './utils'
+import { PREFIX, SELECT_CONFIG } from './config'
+const prefixCls = `${PREFIX || 'h'}-selector`
+export default {
+  name: 'SelectorTip',
+  props: {
+    type: PropTypes.oneOf(['notFound', 'loading', 'noMore']),
+  },
+  mixins: [Locale],
+  inject: {
+    selectProps: { default: () => ({}) },
+    selectData: { default: () => ({}) },
+    selectSlot: { default: () => ({}) },
+  },
+  computed: {
+    ...mapSelectProps({
+      notFoundText: 'notFoundText',
+    }),
+    localeNotFoundText () {
+      if (typeof this.notFoundText === 'undefined' && this.t) {
+        return this.t('i.select.noMatch')
+      }
+      return this.notFoundText
+    },
+  },
+  methods: {
+    renderEmptyList () {
+      const className = `${prefixCls}-not-found`
+      const emptyListCls = [className]
+      // const iconCls = [
+      //   'hui2-iconfont',
+      //   'hui2-icon-empty',
+      // `${className}-icon`,
+      // ]
+      const emptySvg = (
+        <svg t="1605253255178" class={['icon', `${className}-icon`]} viewBox="0 0 1536 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2240">
+          <path d="M780.3904 680.704C1184.6912 682.24 1510.4 760.3712 1510.4 856.576c0 45.2352-71.9872 86.4768-190.2848 117.632a12602.7008 12602.7008 0 0 1-1104.2304 0.0512C97.5872 943.0272 25.6 901.8112 25.6 856.576c0-97.1776 332.3904-175.9488 742.4-175.9488z" fill="#F7F7F7" p-id="2241"></path>
+          <path d="M1039.9744 12.8H496.0256a38.4 38.4 0 0 0-29.312 13.5936L231.3472 304.4864a38.4 38.4 0 0 0 8.8064 57.2672l298.1888 188.544h464.3328l293.5552-188.544a38.4 38.4 0 0 0 8.5504-57.088L1069.312 26.368A38.4 38.4 0 0 0 1039.9744 12.8z m-543.9488 25.6h543.9488a12.8 12.8 0 0 1 9.7792 4.5312l235.4944 278.272a12.8 12.8 0 0 1-1.5104 18.0224l-1.3568 0.9984-287.2576 184.4736H545.7664l-291.9424-184.576a12.8 12.8 0 0 1-3.968-17.664l1.024-1.4336 235.3664-278.0928a12.8 12.8 0 0 1 9.7792-4.5312z" fill="#D9D9D9" p-id="2242"></path>
+          <path d="M1292.032 318.9248c12.0832 0 21.8624 9.7536 21.8624 21.8112v502.2208a65.5104 65.5104 0 0 1-65.536 65.5104H287.6416a65.5104 65.5104 0 0 1-65.5104-65.5104V340.736c0-12.032 9.7792-21.8112 21.8368-21.8112h254.5152a51.2 51.2 0 0 1 51.2 51.2v57.9584a65.5104 65.5104 0 0 0 61.6448 65.408l3.84 0.1024h305.7152a65.5104 65.5104 0 0 0 65.3824-61.6448l0.1024-3.84v-57.984a51.2 51.2 0 0 1 51.2-51.2h254.5152z" fill="#F7F7F7" p-id="2243"></path>
+          <path d="M498.432 318.9248a51.2 51.2 0 0 1 51.2 51.2v57.9584a65.5104 65.5104 0 0 0 61.696 65.408l3.84 0.1024h305.664a65.5104 65.5104 0 0 0 65.408-61.6448l0.1024-3.84v-57.984a51.2 51.2 0 0 1 51.2-51.2h254.5152c12.032 0 21.8368 9.7536 21.8368 21.8112v502.2208a65.5104 65.5104 0 0 1-65.536 65.5104H287.6416a65.5104 65.5104 0 0 1-65.5104-65.5104V340.736c0-12.032 9.7792-21.8112 21.8368-21.8112h254.5152z m-250.7264 524.032c0 20.8128 15.9488 37.888 36.2752 39.7568l3.6352 0.1536h960.768c20.8128 0 37.888-15.9488 39.7312-36.2752l0.1792-3.6352-0.0256-498.4576h-250.7264a25.6 25.6 0 0 0-25.4208 22.6304l-0.1792 2.9952v58.7008l-0.1536 4.608a91.136 91.136 0 0 1-85.9648 85.632l-4.9664 0.128H614.4l-4.608-0.1536a91.136 91.136 0 0 1-85.632-85.9904l-0.128-4.9664v-57.9584a25.6 25.6 0 0 0-22.6304-25.4464l-2.9696-0.1536-250.752-0.0256v498.4576z" fill="#D9D9D9" p-id="2244"></path>
+        </svg>
+      )
+      const textCls = [`${className}-text`]
+      // <div class={iconCls}></div>
+      return (
+        <div class={emptyListCls}>
+          { emptySvg }
+          <div class={textCls}>{this.localeNotFoundText}</div>
+        </div>
+      )
+    },
+  },
+  render () {
+    let content = null
+    const notFound = this.type === 'notFound'
+    const loading = this.type === 'loading'
+    const noMore = this.type === 'noMore'
+    const { emptyList: $emptyList, loading: $loading } = this.selectSlot
+
+    if (notFound) {
+      return $emptyList || this.renderEmptyList()
+    }
+    if (loading) {
+      const defaultSvg = (
+        <svg t="1604037804378" class={['icon', `${prefixCls}-loading`]} viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2172" >
+          <path d="M277.2 277.2m-149.2 0a149.2 149.2 0 1 0 298.4 0 149.2 149.2 0 1 0-298.4 0Z" fill="#4686F2" opacity=".6" p-id="2173" ></path>
+          <path d="M277.2 746.8m-149.2 0a149.2 149.2 0 1 0 298.4 0 149.2 149.2 0 1 0-298.4 0Z" fill="#4686F2" opacity=".8" p-id="2174" ></path>
+          <path d="M746.8 277.2m-149.2 0a149.2 149.2 0 1 0 298.4 0 149.2 149.2 0 1 0-298.4 0Z" fill="#4686F2" opacity=".4" p-id="2175" ></path>
+          <path d="M746.8 746.8m-149.2 0a149.2 149.2 0 1 0 298.4 0 149.2 149.2 0 1 0-298.4 0Z" fill="#4686F2" p-id="2176" ></path>
+        </svg>
+      )
+      content = (
+        <div class={prefixCls + '-dropdown-loading'}>
+          {$loading || defaultSvg}
+        </div>
+      )
+      return content
+    }
+    return null
+  },
+}
+</script>

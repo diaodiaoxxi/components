@@ -1,0 +1,191 @@
+{
+  "id": "1826849",
+  "name": "HUI框架-icon",
+  "font_family": "layout-iconfont",
+  "css_prefix_text": "h-layout-icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7988427",
+      "name": "线-不规则-地球",
+      "font_class": "earth",
+      "unicode": "e6d7",
+      "unicode_decimal": 59095
+    },
+    {
+      "icon_id": "15109990",
+      "name": "StarsOutline",
+      "font_class": "star-outline",
+      "unicode": "e6c8",
+      "unicode_decimal": 59080
+    },
+    {
+      "icon_id": "15006750",
+      "name": "WorkbenchOutline",
+      "font_class": "worktable",
+      "unicode": "e6c7",
+      "unicode_decimal": 59079
+    },
+    {
+      "icon_id": "14986854",
+      "name": "ChangeOutlined",
+      "font_class": "size-change",
+      "unicode": "e6c6",
+      "unicode_decimal": 59078
+    },
+    {
+      "icon_id": "14846147",
+      "name": "RightOutlinedS",
+      "font_class": "arrow-right",
+      "unicode": "e6c2",
+      "unicode_decimal": 59074
+    },
+    {
+      "icon_id": "14846148",
+      "name": "DownOutlineS",
+      "font_class": "arrow-down",
+      "unicode": "e6c3",
+      "unicode_decimal": 59075
+    },
+    {
+      "icon_id": "14846149",
+      "name": "UpOutlineS",
+      "font_class": "arrow-up",
+      "unicode": "e6c4",
+      "unicode_decimal": 59076
+    },
+    {
+      "icon_id": "14846150",
+      "name": "LeftOutlinedS",
+      "font_class": "arrow-left",
+      "unicode": "e6c5",
+      "unicode_decimal": 59077
+    },
+    {
+      "icon_id": "14820087",
+      "name": "EmptyFilled",
+      "font_class": "empty",
+      "unicode": "e6c1",
+      "unicode_decimal": 59073
+    },
+    {
+      "icon_id": "14819985",
+      "name": "SkinOutlined",
+      "font_class": "skin",
+      "unicode": "e6bf",
+      "unicode_decimal": 59071
+    },
+    {
+      "icon_id": "14820026",
+      "name": "CheckOutlinedS",
+      "font_class": "check",
+      "unicode": "e6c0",
+      "unicode_decimal": 59072
+    },
+    {
+      "icon_id": "14819982",
+      "name": "LogoutOutlined",
+      "font_class": "logout",
+      "unicode": "e6bc",
+      "unicode_decimal": 59068
+    },
+    {
+      "icon_id": "14819983",
+      "name": "UnlockOutlined",
+      "font_class": "unlock",
+      "unicode": "e6bd",
+      "unicode_decimal": 59069
+    },
+    {
+      "icon_id": "14819984",
+      "name": "ReloadOutlined",
+      "font_class": "reload",
+      "unicode": "e6be",
+      "unicode_decimal": 59070
+    },
+    {
+      "icon_id": "14785018",
+      "name": "CirclesOutline",
+      "font_class": "submenu-circle",
+      "unicode": "e6b0",
+      "unicode_decimal": 59056
+    },
+    {
+      "icon_id": "14785019",
+      "name": "MenuUnfoldOutlined",
+      "font_class": "menu-unfold",
+      "unicode": "e6b1",
+      "unicode_decimal": 59057
+    },
+    {
+      "icon_id": "14785021",
+      "name": "CloseOutlined",
+      "font_class": "close",
+      "unicode": "e6b2",
+      "unicode_decimal": 59058
+    },
+    {
+      "icon_id": "14785022",
+      "name": "MenuFoldOutlined",
+      "font_class": "menu-fold",
+      "unicode": "e6b3",
+      "unicode_decimal": 59059
+    },
+    {
+      "icon_id": "14785024",
+      "name": "CloseCircleFilled",
+      "font_class": "close-filled",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "14785025",
+      "name": "MenuOutline",
+      "font_class": "fullmenu",
+      "unicode": "e6b5",
+      "unicode_decimal": 59061
+    },
+    {
+      "icon_id": "14785026",
+      "name": "SmileOutlined",
+      "font_class": "smile",
+      "unicode": "e6b6",
+      "unicode_decimal": 59062
+    },
+    {
+      "icon_id": "14785027",
+      "name": "searchOutline",
+      "font_class": "search",
+      "unicode": "e6b7",
+      "unicode_decimal": 59063
+    },
+    {
+      "icon_id": "14785028",
+      "name": "EllipsisOutlined",
+      "font_class": "ellipsis",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
+      "icon_id": "14785029",
+      "name": "StarsFilled",
+      "font_class": "star",
+      "unicode": "e6b9",
+      "unicode_decimal": 59065
+    },
+    {
+      "icon_id": "14785030",
+      "name": "LockOutlined",
+      "font_class": "lock",
+      "unicode": "e6ba",
+      "unicode_decimal": 59066
+    },
+    {
+      "icon_id": "14785031",
+      "name": "DragOutlined",
+      "font_class": "drag",
+      "unicode": "e6bb",
+      "unicode_decimal": 59067
+    }
+  ]
+}

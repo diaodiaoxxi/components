@@ -1,0 +1,102 @@
+@import '~@hui/scss-utils';
+
+$namespace: 'h';
+$element-separator: '-';
+$modifier-separator: '-';
+$state-prefix: 'is-';
+
+$layout-head-history-text-color: #999;
+$layout-head-history-title-color: #999;
+$layout-head-history-ctrl-color: #4686f2;
+$layout-head-history-bg: #fff;
+
+@include b(layout-head-search-item) {
+  display: flex;
+  justify-content: space-between;
+  @include e(text) {
+    max-width: 80%;
+    @include ellipsis();
+  }
+
+  @include e(icon) {
+    flex: none;
+    color: #d9d9d9;
+
+    &:hover{
+      color: #999;
+    }
+
+    @include when(favour) {
+      color: #ffc103;
+    }
+  }
+
+  @include e(hlight) {
+    color: #4586f2;
+  }
+}
+
+@include b(topbar-search-history) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 296px;
+  height: 164px;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  @include user-select();
+
+  @include e(head) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 40px;
+    padding: 16px 16px 0;
+    font-size: 12px;
+  }
+
+  @include e(body) {
+    height: 124px;
+    width: 100%;
+    padding: 12px 14px;
+  }
+
+  @include e(tag-wrap) {
+    display: flex;
+    flex-wrap: wrap;
+    height: 98px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  @include e(title) {
+    color: $layout-head-history-title-color;
+  }
+
+  @include e(ctrl-item) {
+    display: inline-block;
+    color: $layout-head-history-ctrl-color;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  @include e(empty) {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include m(icon) {
+      width: 60px;
+      color: #f7f7f7;
+      font-size: 40px;
+    }
+    @include m(text) {
+      color: $layout-head-history-text-color;
+    }
+  }
+}

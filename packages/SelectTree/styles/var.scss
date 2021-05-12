@@ -1,0 +1,22 @@
+/* BEM config */
+$namespace: 'u' !default;
+$element-separator: '-'  !default;
+$modifier-separator: '-' !default;
+$state-prefix: 'is-' !default;
+
+
+/*  -------- tree var -------- */
+$select-tree-node-selected-bg: #f7f7f7;
+$select-tree-node-selected-color: #333333;
+$select-tree-node-selected-weight: 700;
+$select-tree-node-focus-bg: #eaf5ff;
+
+@mixin blockDirectory-selected{
+  background: $select-tree-node-selected-bg;
+  color: $select-tree-node-selected-color;
+  font-weight: $select-tree-node-selected-weight;
+}
+
+@mixin blockDirectory-focus{
+  background: $select-tree-node-focus-bg;
+}

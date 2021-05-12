@@ -1,0 +1,284 @@
+$css-prefix: #{$namespace + $element-separator};
+
+$line-height-base: 1.5;
+$zindex-tooltip: 1060;
+
+$shadow-color: rgba(0, 0, 0, .2);
+$shadow-card: 0 1px 1px 0 rgba(0, 0, 0, .1);
+$shadow-up: 0 -1px 6px $shadow-color;
+$shadow-down: 0 1px 6px $shadow-color;
+$shadow-left: -1px 0 6px $shadow-color;
+$shadow-right: 1px 0 6px $shadow-color;
+
+$poptip-title-margin: 0;
+$poptip-title-padding: 8px 16px;
+$poptip-title-after-left: 8px;
+$poptip-title-after-right: 8px;
+$poptip-title-after-bottom: 0;
+$border-color-split: #f7f7f7;
+$title-color: #495060;
+$font-size-base: 14px;
+$poptip-title-inner-font-size: $font-size-base;
+$text-color: #495060;
+$poptip-title-inner-line-height: 24px;
+$poptip-title-inner-font-weight: 700;
+$poptip-body-padding: 8px 16px;
+$poptip-body-inner-font-size: $font-size-small;
+$poptip-body-inner-color: #7e828a;
+$poptip-inner-background-color: #fff;
+$border-radius-small: 4px;
+$shadow-base: $shadow-down;
+$poptip-popper-min-width: 100px;
+$font-size-small: 12px;
+
+$poptip-arrow-width: 5px;
+$poptip-arrow-outer-width: ($poptip-arrow-width + 1);
+$poptip-distance: $poptip-arrow-width - 1 + 4;
+
+$poptip-arrow-color: darken(#ddd, 0.1);
+$poptip-arrow-width: 5px;
+$poptip-popper-after-border-top-color: #fff;
+$poptip-popper-after-border-right-color: #fff;
+$poptip-popper-after-border-bottom-color: #fff;
+$poptip-popper-after-border-left-color: #fff;
+$poptip-arrow-outer-width: ($poptip-arrow-width + 1);
+$poptip-confirm-body-padding: 16px 16px 8px;
+$poptip-confirm-body-iconfont-font-size: 16px;
+$warning-color: #ff9901;
+$poptip-confirm-body-iconfont-line-height: 18px;
+$poptip-confirm-message-padding-left: 20px;
+$poptip-confirm-message-font-size: 12px;
+$poptip-confirm-message-color: #495060;
+$poptip-confirm-footer-padding: 8px 16px 16px;
+$poptip-confirm-footer-button-margin-left: 4px;
+
+$poptip-prefix-cls: '#{$css-prefix}poptip';
+$poptip-arrow: '#{$poptip-prefix-cls}-arrow';
+
+@mixin popper($arrow, $arrow-width, $arrow-distance, $bg){
+    display: block;
+    visibility: visible;
+    font-size: $font-size-small;
+    line-height: $line-height-base;
+    position: absolute;
+    z-index: $zindex-tooltip;
+
+    &[x-placement^="top"] {
+        padding: $arrow-width 0 $arrow-distance 0;
+    }
+    &[x-placement^="right"] {
+        padding: 0 $arrow-width 0 $arrow-distance;
+    }
+    &[x-placement^="bottom"] {
+        padding: $arrow-distance 0 $arrow-width 0;
+    }
+    &[x-placement^="left"] {
+        padding: 0 $arrow-distance 0 $arrow-width;
+    }
+
+    &[x-placement^="top"] .#{$arrow} {
+        bottom: $arrow-distance - $arrow-width;
+        border-width: $arrow-width $arrow-width 0;
+        border-top-color: $bg;
+    }
+    &[x-placement="top"] .#{$arrow} {
+        left: 50%;
+        margin-left: -$arrow-width;
+    }
+    &[x-placement="top-start"] .#{$arrow} {
+        left: 16px;
+    }
+    &[x-placement="top-end"] .#{$arrow} {
+        right: 16px;
+    }
+
+    &[x-placement^="right"] .#{$arrow} {
+        left: $arrow-distance - $arrow-width;
+        border-width: $arrow-width $arrow-width $arrow-width 0;
+        border-right-color: $bg;
+    }
+    &[x-placement="right"] .#{$arrow} {
+        top: 50%;
+        margin-top: -$arrow-width;
+    }
+    &[x-placement="right-start"] .#{$arrow} {
+        top: 8px;
+    }
+    &[x-placement="right-end"] .#{$arrow} {
+        bottom: 8px;
+    }
+
+    &[x-placement^="left"] .#{$arrow} {
+        right: $arrow-distance - $arrow-width;
+        border-width: $arrow-width 0 $arrow-width $arrow-width;
+        border-left-color: $bg;
+    }
+    &[x-placement="left"] .#{$arrow} {
+        top: 50%;
+        margin-top: -$arrow-width;
+    }
+    &[x-placement="left-start"] .#{$arrow} {
+        top: 8px;
+    }
+    &[x-placement="left-end"] .#{$arrow} {
+        bottom: 8px;
+    }
+
+    &[x-placement^="bottom"] .#{$arrow} {
+        top: $arrow-distance - $arrow-width;
+        border-width: 0 $arrow-width $arrow-width;
+        border-bottom-color: $bg;
+    }
+    &[x-placement="bottom"] .#{$arrow} {
+        left: 50%;
+        margin-left: -$arrow-width;
+    }
+    &[x-placement="bottom-start"] .#{$arrow} {
+        left: 16px;
+    }
+    &[x-placement="bottom-end"] .#{$arrow} {
+        right: 16px;
+    }
+}
+
+.#{$poptip-prefix-cls} {
+  display: inline-block;
+  &-rel {
+    display: inline-block;
+    position: relative;
+  }
+
+  &-title {
+    margin: $poptip-title-margin;
+    padding: $poptip-title-padding;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      height: 1px;
+      position: absolute;
+      left: $poptip-title-after-left;
+      right: $poptip-title-after-right;
+      bottom: $poptip-title-after-bottom;
+      background-color: $border-color-split;
+    }
+
+    &-inner {
+      // color: $title-color;
+      // font-size: $font-size-base;
+      font-family: MicrosoftYaHei-Bold;
+      font-size: $poptip-title-inner-font-size;
+      color: $text-color;
+      letter-spacing: 0;
+      text-align: left;
+      line-height: $poptip-title-inner-line-height;
+      font-weight: $poptip-title-inner-font-weight;
+    }
+  }
+
+  &-body {
+    padding: $poptip-body-padding;
+
+    &-content {
+      overflow: auto;
+      &-inner {
+        // color: $text-color;
+        font-family: MicrosoftYaHei;
+        font-size: $poptip-body-inner-font-size;
+        color: $poptip-body-inner-color;
+        text-align: left;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &-inner {
+    width: 100%;
+    background-color: $poptip-inner-background-color;
+    background-clip: padding-box;
+    //border: 1px solid $border-color-split;
+    border-radius: $border-radius-small;
+    box-shadow: $shadow-base;
+    white-space: nowrap;
+  }
+
+  &-popper {
+    min-width: $poptip-popper-min-width;
+    font-size: $font-size-small;
+    @include popper($poptip-arrow, $poptip-arrow-width, $poptip-distance, $poptip-arrow-color);
+    &[x-placement^='top'] .#{$poptip-arrow}:after {
+      content: ' ';
+      bottom: 1px;
+      margin-left: -$poptip-arrow-width;
+      border-bottom-width: 0;
+      border-top-color: $poptip-popper-after-border-top-color;
+    }
+    &[x-placement^='right'] .#{$poptip-arrow}:after {
+      content: ' ';
+      left: 1px;
+      bottom: -$poptip-arrow-width;
+      border-left-width: 0;
+      border-right-color: $poptip-popper-after-border-right-color;
+    }
+    &[x-placement^='bottom'] .#{$poptip-arrow}:after {
+      content: ' ';
+      top: 1px;
+      margin-left: -$poptip-arrow-width;
+      border-top-width: 0;
+      border-bottom-color: $poptip-popper-after-border-bottom-color;
+    }
+    &[x-placement^='left'] .#{$poptip-arrow}:after {
+      content: ' ';
+      right: 1px;
+      border-right-width: 0;
+      border-left-color: $poptip-popper-after-border-left-color;
+      bottom: -$poptip-arrow-width;
+    }
+  }
+  &-arrow {
+    &,
+    &:after {
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      border-color: transparent;
+      border-style: solid;
+    }
+  }
+  &-arrow {
+    border-width: $poptip-arrow-outer-width;
+  }
+  &-arrow:after {
+    content: '';
+    border-width: $poptip-arrow-width;
+  }
+  &-confirm &-popper {
+    max-width: 300px;
+  }
+  &-confirm &-inner {
+    white-space: normal;
+  }
+  &-confirm &-body {
+    padding: $poptip-confirm-body-padding;
+    .iconfont {
+      font-size: $poptip-confirm-body-iconfont-font-size;
+      color: $warning-color;
+      line-height: $poptip-confirm-body-iconfont-line-height;
+      position: absolute;
+    }
+    &-message {
+      padding-left: $poptip-confirm-message-padding-left;
+      font-size: $poptip-confirm-message-font-size;
+      color: $poptip-confirm-message-color;
+    }
+  }
+  &-confirm &-footer {
+    text-align: right;
+    padding: $poptip-confirm-footer-padding;
+    button {
+      margin-left: $poptip-confirm-footer-button-margin-left;
+    }
+  }
+}

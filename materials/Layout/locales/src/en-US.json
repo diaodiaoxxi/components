@@ -1,0 +1,56 @@
+{
+  "hui": {
+    "common": {
+      "cancel": "Cancel",
+      "commit": "Submit",
+      "register": "Register",
+      "reset": "Reset",
+      "sure": "Sure"
+    },
+    "frameLayout": {
+      "changeSkin": "Change Skin",
+      "cookMenu": "cook",
+      "delFavour": "Unfavorite",
+      "drawerMenu": "drawer",
+      "fullMenu": "All menu",
+      "localeTitle": "Language",
+      "lockScreen": "Lock Screen",
+      "loginTime": "Last Login Time:",
+      "logout": "Logout",
+      "moveFavour": "",
+      "resetPwd": {
+        "cancle": "cancel",
+        "confirm": "confirm",
+        "curPwd": "Old",
+        "defaultPwdMsg": "Your password is the initial password, please change the password first!",
+        "enterCurPwd": "Please enter old password",
+        "enterNewPwd": "Please enter new password",
+        "enterNewPwdAgain": "Please enter the new password again",
+        "enterRightPwd": "Please fill in the password correctly",
+        "netError": "Network communication failed, server abnormal",
+        "newPwd": "New",
+        "newPwdConf": "Confirm",
+        "pwdEnterMsg1": "Please enter at least",
+        "pwdEnterMsg2": "Bit password",
+        "pwdEnterMsg3": "Please enter at least",
+        "pwdEnterMsg4": "Different characters above, including numbers, letters, special characters",
+        "pwdModify": "Reset Password",
+        "pwdNoEquals": "Two password entries are inconsistent",
+        "successModifyPwd": "Reset password success",
+        "title": "Reset Password"
+      },
+      "resetSidebar": "Reset menu bar",
+      "sidebarType": "Navigation",
+      "unlockInputTip": "Please enter login password",
+      "unlockScreen": "Unlock screen",
+      "version": "Version:"
+    },
+    "navTabs": {
+      "close": "Close current page",
+      "closeAll": "Close all pages",
+      "closeOther": "Close other pages",
+      "home": "Home",
+      "refresh": "Refresh page"
+    }
+  }
+}

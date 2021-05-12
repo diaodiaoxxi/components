@@ -1,0 +1,25 @@
+/* BEM 兼容老 hui 1.0 样式
+-------------------------- */
+
+@mixin se($modifier) {
+  $selector: &;
+  $currentSelector: '';
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector + & + $element-separator + $unit + ','};
+  }
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
+@mixin hui-when($state) {
+  $selector: &;
+  @at-root {
+    &#{$selector + $element-separator + $state} {
+      @content;
+    }
+  }
+}

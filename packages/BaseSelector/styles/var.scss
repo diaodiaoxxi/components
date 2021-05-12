@@ -1,0 +1,270 @@
+/* BEM config */
+$namespace: 'u' !default;
+$element-separator: '-'  !default;
+$modifier-separator: '-' !default;
+$state-prefix: 'is-' !default;
+
+/* 全局变量 ---*/
+$primary-color: #4686f2;
+$form-component-height: 32px;
+$input-height-base: 32px;
+$input-height-large: 36px;
+$input-height-small: 24px;
+// $border-color-base: #d7dde4; // outside
+$border-color-base: #D9D9D9;
+$border-color-split: #f7f7f7; // inside
+// $input-disabled-color: #999;
+$input-disabled-color: #bbb;
+$background-color-select-hover: #eaf5ff;
+$selected-color: lighten($primary-color, 10%);
+$font-size-small: 12px;
+$font-size-base: 14px;
+$mixin-input-active-box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+
+
+/* select var -------------------------------- */
+$select-font-size-base: 14px !default;
+$select-text-color: #333 !default;
+$select-padding-base: 8px !default;
+$select-border-color: #d7dde4 !default;
+$select-box-shadow-width: 2px; // TODO
+$select-height-default: 28px !default;
+$select-height-large: 36px !default;
+$select-height-small: 24px !default;
+$select-border-width: 1px !default;
+$select-vertical-align: middle !default;
+$select-placeholder-font-size: 12px !default;
+$select-placeholder-color: #999999 !default;
+$select-head-padding-left: 8px !default;
+$select-min-width: 200px !default;
+
+
+/* select-head var -------------------------------- */
+$select-head-bg-default: #fff !default;
+$select-head-bg-disabled: #f7f7f7 !default;
+$select-head-bg-readonly: #f7f7f7 !default;
+$select-head-font-size: $font-size-small !default;
+$select-head-icon-size: $font-size-small !default;
+$select-head-icon-color: #bbbbbb !default;
+$select-head-input-padding: 0;
+$select-head-input-color: $select-text-color !default;
+$select-head-input-font-size: $font-size-small !default;
+$select-head-border-width: 1px !default;
+$select-head-border:$select-head-border-width solid $border-color-base !default;
+$select-head-border-radius: 2px !default;
+
+/* select-head-icon var -------------------------------- */
+$select-icon-arrow-right: 8px !default;
+$select-icon-clear-size: 16px !default;
+$select-icon-clear-right: 24px !default;
+
+/* select-head-multiple-tag-------------------*/
+$select-tag-font-size: 12px !default;
+$select-tag-height: 22px !default;
+$select-tag-width-max: 88px !default;
+$select-tag-border-width: 1px !default;
+$select-tag-border: $select-tag-border-width solid #d9d9d9 !default;
+$select-tag-border-radius: 2px !default;
+$select-tag-space: 4px !default;
+$select-tag-padding-left: $select-tag-space !default;
+$select-tag-padding-right: $select-tag-font-size + $select-tag-space * 2!default;
+$select-tag-background: #f5f5f5 !default;
+$select-tag-close-color: #999 !default;
+
+/* select-option var -------------------------------- */
+$select-option-height: 28px !default;
+$select-option-font-size: 12px !default;
+$select-option-font-color: $select-text-color !default; // TODO text-color
+$select-option-font-color-disabled: #c3cbd6 !default; // TODO text-color
+$select-option-hover-color: $background-color-select-hover !default; // TODO
+$select-option-selected-color: $selected-color !default;
+$select-option-selected-bg: #f7f7f7 !default; // 只在单选下生效
+$select-option-hlight: red !default;
+$select-group-text-color: #999 !default;
+
+/* select-dropdown ------------------------- */
+$select-dropdown-show-num: 7 !default;
+$select-dropdown-padding: $select-padding-base !default;
+$select-dropdown-height-max: $select-option-height * $select-dropdown-show-num !default;
+$select-dropdown-font-color: $select-text-color !default; // TODO text-color
+$select-dropdown-margin: 5px 0 !default;
+$select-dropdown-background-color: #fff !default;
+$select-dropdown-zindex: 1000 !default;
+
+/* select-not-found ------------------------- */
+$select-not-found-font-size: 12px !default;
+$select-not-found-color: #999 !default;
+$select-not-found-icon-width: 58px!default;
+$select-not-found-icon-height: 38px!default;
+$select-icon-font-size-not-found: 28px !default;
+
+/* select-loaing ------------------------- */
+$select-loading-svg-width: 20px !default;
+
+
+
+
+// from input.scss
+@mixin hover($color: $primary-color) {
+  border-color: mix(#fff, $color, 20%);
+}
+
+@mixin active($color: $primary-color) {
+  // border-color: mix(#fff, $color, 20%);
+  border: 1px solid $primary-color;
+  // border-radius: $btn-border-radius;
+  outline: 0;
+  box-shadow: $mixin-input-active-box-shadow;
+}
+
+@mixin disabled() {
+  background-color: $select-head-bg-disabled !important;
+  color: $input-disabled-color;
+  opacity: 1;
+  user-select: none; // disabled禁止复制
+  cursor: not-allowed;
+  overflow: hidden;
+  &:hover {
+    @include hover($select-border-color);
+  }
+}
+
+@mixin readonly() {
+  background-color: $select-head-bg-readonly;
+  cursor: default;
+  overflow: hidden;
+
+  &:hover {
+    @include hover($select-border-color);
+  }
+}
+
+@mixin tag-disabled {
+  color: #bbb;
+  cursor: not-allowed;
+}
+
+@mixin placeholder($color: $select-placeholder-color) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  // Internet Explorer 10+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  // Safari and Chrome
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin size($select, $input-height, $font-size: $font-size-small) {
+  height: $input-height;
+
+  #{$select}-input {
+    height: $input-height;
+    line-height: $input-height;
+  }
+
+  #{$select}-selection {
+    height: $input-height;
+    line-height: $input-height;
+  }
+
+  #{$select}-placeholder,
+  #{$select}-selected-value {
+    height: $input-height - 2px;
+    line-height: $input-height - 2px;
+    font-size: $font-size;
+  }
+}
+
+@mixin align($select, $align: left) {
+  #{$select}-head,
+  is-single {
+    #{$select}-placeholder,
+    #{$select}-selected-value {
+      text-align: $align;
+    }
+
+    #{$select}-input {
+      text-align: $align;
+    }
+  }
+}
+
+/* Scrollbar-------------------------- */
+@mixin select-scroll-bar {
+  $--scrollbar-thumb-background: #b4bccc;
+  $--scrollbar-track-background: transparent;
+  $--scrollbar-track-hover-background: rbga(#333333, 1);
+  $--scrollbar-width: 10px;
+  $--scrollbar-zindex: 1000;
+  $--scrollbar-border-radius: 5px;
+
+  &::-webkit-scrollbar {
+    width: $--scrollbar-width;
+    z-index: $--scrollbar-zindex;
+
+    &:horizontal {
+      height: $--scrollbar-width;
+    }
+
+    &-thumb {
+      border-radius: $--scrollbar-border-radius;
+      width: $--scrollbar-width;
+      background: rgba($--scrollbar-thumb-background, 0.7);
+      border-style: dashed;
+      border-color: transparent;
+      border-width: 2px;
+      background-clip: padding-box;
+    }
+
+    &-thumb:hover {
+      background: rgba($--scrollbar-thumb-background, 1);
+    }
+
+    &-corner {
+      background: $--scrollbar-track-background;
+    }
+
+    &-track {
+      background: $--scrollbar-track-background;
+      &-piece {
+        background: $--scrollbar-track-background;
+        width: $--scrollbar-width;
+      }
+    }
+  }
+}
+
+/* loading dropdown-------------------------- */
+@mixin select-loading-dropdown {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255,255,255,0.5);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin fade-icon {
+  .fade-icon-leave-to{
+    opacity: 0;
+    transform: translate3d(0,0,0);
+  }
+  .fade-icon-enter{
+    opacity: 0;
+    transform: translate3d(0,0,0);
+  }
+  .fade-icon-leave-active,.fade-icon-enter-active{
+    transition: .5s all ease;
+  }
+}
+
