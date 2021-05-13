@@ -6,6 +6,9 @@
 [iconfont](https://www.iconfont.cn/api/project/download.zip?spm=a313x.7781069.1998910419.d7543c303&pid=891510&ctoken=JZVBTe1fwGIkg-e1dY18Xe5o)
 [iconfont](https://www.iconfont.cn/api/project/download.zip?spm=a313x.7781069.1998910419.d7543c303&pid=1773588&ctoken=rmIYFGOt_-SACiuwAeqvMUN6)
 
+## 文档地址
+
+[文档api](https://diaodiaoxxi.github.io/website/blog/component/api/tree.html)
 
 ## 代码规范
 - prettier 格式化 .vue,.js 文件
